@@ -1,6 +1,6 @@
 #ignore testes .txt
 /FrontEnd/texto.txt
 /BackEnd/texto.txt
-
+*.txt
 #igore
 #/node_modules
