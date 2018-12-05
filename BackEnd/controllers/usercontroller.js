@@ -11,14 +11,12 @@ let apiRoutes = express.Router();
 
 apiRoutes.post('/login', async (req, res) => {
     const { document, password } = req.body;
-    db.connect();
+
     let user;
     try {
         user =  await User.findOne({ document }).select('+password');
     } catch(err) {
         return send.status(400).send({ message: 'Error while retrieving data', error: err });
-    } finally {
-        db.disconnect();
     }
 
     if (!user)
@@ -37,11 +35,10 @@ apiRoutes.post('/login', async (req, res) => {
     res.send({ success: true, message: 'Login Accepted', token: token });
 });
 
-apiRoutes.put('/update', async (req, res) => {
+apiRoutes.put('/update', verifyToken, async (req, res) => {
     const { phone, email, password, newPassword, id } = req.body;
     let user;
     try {
-        db.connect();
         user = await User.findById(id).select('+password');
     } catch (err) {
         return res.status(400).send({ message: 'Error while retrieving data', error: err });
@@ -79,19 +76,27 @@ apiRoutes.put('/update', async (req, res) => {
         return res.status(400).send({ message: 'All data is up to date', user: user});
     } 
 
-    let updatedUser;
-    try {
-        updatedUser = await User.findOneAndUpdate(id, newData, { new: true, runValidators: true }).select('-password');
-    } catch(err) {
-        console.log('Error while updating data: ', err);
-        return res.status(400).send({ message: 'Error while updating data', error: err });
-    } finally {
-        db.disconnect();
-    }
-    
-    delete updatedUser.password;
-    console.log('User Data: ', updatedUser);
-    res.send({ updatedUser });
+    let query = User.findById(id, { new: true, runValidators: true }, function(err, doc){
+        if (err) {
+            console.log('Error while updating data: 123', err);
+            return res.status(400).send({ message: 'Error while updating data 123', error: err });
+        }
+
+        doc.set(newData);
+        doc.save();
+    });
+
+    query = User.findById(id, function(err, doc){
+        if(err) {
+            console.log('Error while updating data: 124', err);
+            return res.status(400).send({ message: 'Error while updating data 124', error: err });
+        }
+
+        let user = doc;
+        console.log('UpdatedUser :', user);
+        delete user.password;
+        res.send({ user });
+    });
 });
 
 module.exports = apiRoutes;

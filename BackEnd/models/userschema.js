@@ -53,37 +53,20 @@ const hashPass = function(next){
             next();
         });
     });
-}
+} 
 
-UserSchema.pre('save', function(next){
-    let user = this;
-    if (!user.isModified('password')) return next();
-
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-        if (err) return next(err);
-
-        bcrypt.hash(user.password, salt, function(err, hash){
-            if (err) return next(err);
-
-            user.password = hash;
-            next();
-        });
-    });
-});
+UserSchema.pre('save', hashPass);
 
 UserSchema.pre('findOneAndUpdate', function(next) {
     const password = this.getUpdate().$set.password;
     if(!password)
         return next();
     
-    try {
-        const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR);
-        const hash = bcrypt.hashSync(password, salt);
-        this.getUpdate().$set.password = hash;
-        next();
-    } catch (err) {
-        return next(err);
-    }
+    let pass = hashPass(password);
+    if(pass instanceof Error) return next(pass);
+    
+    this.getUpdate().$set.password = pass;
+    next();
 });
 
 const User = mongoose.model('User', UserSchema);

@@ -108,6 +108,13 @@ const usersArray = [
 ];
 
 db.connect();
+(async function() {
+    try{
+        await db.db.dropCollection('users');
+    } catch (err) {
+        console.log('Error while dropping Users Database', err);
+    }
+})();
 usersArray.forEach(async function(val) {
     // db.connect();
     let user = new User(val);
