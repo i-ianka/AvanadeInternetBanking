@@ -5,6 +5,7 @@ let TransactionSchema = new Schema({
     type: { type: String, enum: ['DEPOSIT', 'DRAFT', 'TRANSFER'], required: true },
     value: { type: Number, required: true },
     date: { type: Date, default: Date.now },
+    transferAccount: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' },
     created_at: { type: String, required: true }
 });
 

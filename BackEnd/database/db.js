@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const dotenv = require('../dotenv');
 const connection = process.env.DB_CONNECTION;
 const db = mongoose.connection;
+mongoose.set('useCreateIndex', true);
+connect();
 
 db.on('error', (err) => {
     console.log('connection error', err);
@@ -33,4 +35,4 @@ async function disconnect() {
     }
 }
 
-module.exports = { connect, disconnect };
+module.exports = { db, connect, disconnect };

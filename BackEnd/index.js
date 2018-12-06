@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const morgan = require('morgan');
 const dotenv = require('./dotenv');
+const db = require('./database/db');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -11,12 +12,12 @@ app.use(morgan('dev'));
 
 let apiRoutes = express.Router();
 
-app.get('/', (req, res) => {
-    res.json({ message: 'Node with JWT' });
+app.get('/api', (req, res) => {
+    res.json({ message: 'Avanade Internet Banking' });
 });
 
 let UserController = require('./controllers/usercontroller');
-app.use('/', UserController);
+app.use('/api', UserController);
 
 let port = process.env.PORT;
 app.listen(port);

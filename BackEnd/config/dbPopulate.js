@@ -107,15 +107,181 @@ const usersArray = [
     },
 ];
 
-db.connect();
+const accountsArray = [
+    {
+        number: 000010,
+        agency: 0001,
+        transactions: [
+            {
+                type: 'TRANSFER',
+                value: 3200.00,
+                created_at: 'TRANSF SALDO C/SAL AVANADE',
+            },
+            {
+                type: 'DRAFT',
+                value: -220.00,
+                created_at: 'CONTA DE TELEFONE NET',
+            },
+            {
+                type: 'DEPOSIT',
+                value: 19.90,
+                created_at: 'PAGAMENTO EMPREST TIO',
+            },
+        ],
+    },
+    {
+        number: 000020,
+        agency: 0001,
+        transactions: [
+            {
+                type: 'DEPOSIT',
+                value: 1587.05,
+                created_at: 'RECEB ALUGUEL',
+            },
+            {
+                type: 'TRANSFER',
+                value: 142.99,
+                created_at: 'PAG DE PICPAY',
+            },
+            {
+                type: 'DRAFT',
+                value: 199.90,
+                created_at: 'C & A COMPRAS',
+            },
+        ],
+    },
+    {
+        number: 000030,
+        agency: 0001,
+        transactions: [
+            {
+                type: 'TRANSFER',
+                value: 3200.00,
+                created_at: 'TRANSF SALDO C/SAL AVANADE',
+            },
+            {
+                type: 'DEPOSIT',
+                value: 134.99,
+                created_at: 'DEP SALDO LUDO STUDIO',
+            },
+            {
+                type: 'DRAFT',
+                value: 9.25,
+                created_at: 'COMPRA ELO DEB VISTA ALIESKE PAES E DOCES',
+            },
+        ],
+    },
+    {
+        number: 000040,
+        agency: 0002,
+        transactions: [
+            {
+                type: 'DRAFT',
+                value: -500.00,
+                created_at: 'PAGAMENTO A VISTA GAMA ACADEMY',
+            },
+            {
+                type: 'DRAFT',
+                value: -39.90,
+                created_at: 'DEBITO AUTOMATICO NETFLIX.COM',
+            },
+            {
+                type: 'DEPOSIT',
+                value: 199.90,
+                created_at: 'DEPOSITO PAGAMENTO E SHOW EVENTOS',
+            },
+        ],
+    },
+    {
+        number: 000050,
+        agency: 0002,
+        transactions: [
+            {
+                type: 'TRANSFER',
+                value: 3200.00,
+                created_at: 'TRANSF SALDO C/SAL AVANADE',
+            },
+            {
+                type: 'TRANSFER',
+                value: -344.99,
+                created_at: 'COMPRA ELO DEBITO VISTA AUTOBOT SOM E AUDIO',
+            },
+            {
+                type: 'DRAFT',
+                value: -159.99,
+                created_at: 'PAGAMENTO PARCELA 2/5 CASAS BAHIA',
+            },
+        ],
+    },
+    {
+        number: 000060,
+        agency: 0002,
+        transactions: [
+            {
+                type: 'DRAFT',
+                value: -50.00,
+                created_at: 'SAQUE BANCO24HORAS',
+            },
+            {
+                type: 'DRAFT',
+                value: -250.00,
+                created_at: 'SAQUE BANCO24HORAS',
+            },
+            {
+                type: 'TRANSFER',
+                value: -39.90,
+                created_at: 'TRANSF COM SALDO CONTA BANCO 999',
+            },
+        ],
+    },
+    {
+        number: 000070,
+        agency: 0003,
+        transactions: [
+            {
+                type: 'TRANSFER',
+                value: 3200.00,
+                created_at: 'TRANSF SALDO C/SAL AVANADE',
+            },
+            {
+                type: 'DRAFT',
+                value: -89.99,
+                created_at: 'CONTA DE TELEFONE VIVO',
+            },
+            {
+                type: 'DEPOSIT',
+                value: 100.00,
+                created_at: 'PAGAMENTO BONUS VENDAS EMPRESA XYZ SOLUTIONS',
+            },
+        ],
+    },
+];
+
+(async function() {
+    try{
+        await db.db.dropCollection('users');
+    } catch (err) {
+        console.log('Error while dropping Users Database', err);
+    }
+})();
 usersArray.forEach(async function(val) {
-    // db.connect();
     let user = new User(val);
 
     try{
         const showUser = await user.save();
         console.log('User Data: ', showUser);
     } catch (err) {
-        console.log('There was an error while trying to populate the database', err);
+        console.log('There was an error while trying to populate the database - CODE: 00010', err);
     } 
+});
+
+accountsArray.forEach(async function(val) {
+    let account = new Account(val);
+
+    try{
+        const showAccount = await account.save();
+        console.log('Account Data: ', showAccount);
+    } catch (err) {
+        console.log('There was an error while trying to populate the database - CODE: 00020', err);
+    }
 });
