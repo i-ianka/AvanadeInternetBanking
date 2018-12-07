@@ -1,6 +1,6 @@
 const db = require('../database/db');
 const User = require('../models/userschema');
-const Account = require('../models/accountschema');
+const AccountModels = require('../models/accountschema');
 
 const usersArray = [
     {
@@ -109,8 +109,8 @@ const usersArray = [
 
 const accountsArray = [
     {
-        number: 000010,
-        agency: 0001,
+        number: '000010',
+        agency: '0001',
         transactions: [
             {
                 type: 'TRANSFER',
@@ -130,8 +130,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000020,
-        agency: 0001,
+        number: '000020',
+        agency: '0001',
         transactions: [
             {
                 type: 'DEPOSIT',
@@ -151,8 +151,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000030,
-        agency: 0001,
+        number: '000030',
+        agency: '0001',
         transactions: [
             {
                 type: 'TRANSFER',
@@ -172,8 +172,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000040,
-        agency: 0002,
+        number: '000040',
+        agency: '0002',
         transactions: [
             {
                 type: 'DRAFT',
@@ -193,8 +193,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000050,
-        agency: 0002,
+        number: '000050',
+        agency: '0002',
         transactions: [
             {
                 type: 'TRANSFER',
@@ -214,8 +214,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000060,
-        agency: 0002,
+        number: '000060',
+        agency:'0002',
         transactions: [
             {
                 type: 'DRAFT',
@@ -235,8 +235,8 @@ const accountsArray = [
         ],
     },
     {
-        number: 000070,
-        agency: 0003,
+        number: '000070',
+        agency: '0003',
         transactions: [
             {
                 type: 'TRANSFER',
@@ -257,31 +257,29 @@ const accountsArray = [
     },
 ];
 
-(async function() {
-    try{
-        await db.db.dropCollection('users');
-    } catch (err) {
-        console.log('Error while dropping Users Database', err);
-    }
-})();
-usersArray.forEach(async function(val) {
-    let user = new User(val);
+// (async function() {
+//     try{
+//         await db.db.dropCollection('users');
+//         await db.db.dropCollection('account');
+//     } catch (err) {
+//         console.log('Error while dropping Users Database', err);
+//     }
+// })();
 
-    try{
-        const showUser = await user.save();
-        console.log('User Data: ', showUser);
-    } catch (err) {
-        console.log('There was an error while trying to populate the database - CODE: 00010', err);
-    } 
-});
+usersArray.forEach(function(user, index) {
+    let userModel = new User(user);
+    let accountModel = new AccountModels.Account(accountsArray[index]);
 
-accountsArray.forEach(async function(val) {
-    let account = new Account(val);
+    accountModel.save(function(err, account){
+        if (err) return console.log('There was an error while trying to populate the database - CODE: 00010', err);
 
-    try{
-        const showAccount = await account.save();
-        console.log('Account Data: ', showAccount);
-    } catch (err) {
-        console.log('There was an error while trying to populate the database - CODE: 00020', err);
-    }
+        console.log('Conta: ', account);
+        userModel.accounts[0] = account._id;
+        
+        userModel.save(function(err, user) {
+            if (err) return console.log('There was an error while trying to populate the database - CODE: 00020', err);
+
+            console.log('Usuario: ',user);
+        });
+    });
 });

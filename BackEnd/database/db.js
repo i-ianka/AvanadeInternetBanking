@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('../dotenv');
+const fawn = require('fawn');
+
 const connection = process.env.DB_CONNECTION;
 const db = mongoose.connection;
 mongoose.set('useCreateIndex', true);
-connect();
+mongoose.connect(connection, { useNewUrlParser: true });
+fawn.init(mongoose);
+
 
 db.on('error', (err) => {
     console.log('connection error', err);
@@ -35,4 +39,4 @@ async function disconnect() {
     }
 }
 
-module.exports = { db, connect, disconnect };
+module.exports = { db, fawn };
