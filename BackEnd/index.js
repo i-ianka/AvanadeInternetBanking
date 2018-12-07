@@ -19,6 +19,9 @@ app.get('/api', (req, res) => {
 let UserController = require('./controllers/usercontroller');
 app.use('/api', UserController);
 
+let AccountController = require('./controllers/transfercontroller');
+app.use('/api', AccountController);
+
 let port = process.env.PORT;
 app.listen(port);
 console.log('Aplicação rodando na porta ' + port);
