@@ -19,12 +19,12 @@ export class AuthService {
 
   getToken(document, password){
     //post these details on API server
-    fetch('https://reqres.in/api/login', {
+    fetch('http://localhost:3000/api/login', {
         method: 'POST',
         body: JSON.stringify({
           //document: 'peter@klaven',
           //'peter@klaven' cityslicka
-          email: document,
+          document: document,
           password: password          
         }),
         headers: {
@@ -38,14 +38,14 @@ export class AuthService {
         console.log(this.token)
 
         this.getUserDetails(document, this.token)
-      }
-        )
+      })
+      .catch(err => console.log('Deu pau: ', err));
   }
 
   getUserDetails(document, token){
     console.log('infos user')
    // fetch('https://localhost:3000/api/user/' + document, {
-    fetch('https://reqres.in/api/users/2' , {
+    fetch('http://localhost:3000/api/user/'+document , {
       method: 'GET',      
       headers: {
         "token": token.token
