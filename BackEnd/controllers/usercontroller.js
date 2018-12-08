@@ -30,7 +30,7 @@ apiRoutes.post('/login', async (req, res) => {
 
     const userId = { id: user.id };
     const token = jwt.sign(userId, process.env.JWT_SECRET, { expiresIn: 600 });
-    
+
     res.send({ success: true, token: token });
 });
 
@@ -41,8 +41,8 @@ apiRoutes.put('/update', verifyToken, async (req, res) => {
         user = await User.findById(id).select('+password');
     } catch (err) {
         return res.status(400).send({ success: false, message: 'Error while retrieving data - Code: 0005', error: err });
-    } 
-    
+    }
+
     if(!user)
         return res.status(400).send({ success: false, error: 'User not found - Code: 0006' });
 
@@ -55,9 +55,9 @@ apiRoutes.put('/update', verifyToken, async (req, res) => {
 
     const newData = { phone, email, password: newPassword };
 
-    /* 
+    /*
     * Verifica os dados passados na requisição com os dados guardados do usuário,
-    * se os dados forem iguais não há necessidade de atualizá-los 
+    * se os dados forem iguais não há necessidade de atualizá-los
     */
 
     function deleteProperty(propName, obj) {
@@ -77,7 +77,7 @@ apiRoutes.put('/update', verifyToken, async (req, res) => {
         return newData[prop];
     });
 
-    if(!noDataToUpdate) 
+    if(!noDataToUpdate)
         return res.status(400).send({ success: false, message: 'All data is up to date - Code: 0009' });
 
     let query = User.findById(id, { new: true, runValidators: true }, function(err, doc){

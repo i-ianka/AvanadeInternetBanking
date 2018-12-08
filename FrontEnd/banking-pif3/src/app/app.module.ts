@@ -5,6 +5,16 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 
 
+import { Observable, Subject, ReplaySubject, from, of, range } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';
+
+
+
+//login
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
+
 //components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -21,6 +31,16 @@ import { BarComponent } from './core/components/bar/bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { EspacoMoedaPipe } from './pipes/espaco-moeda.pipe';
 import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
+
+import { DadosUsuarioComponent } from './components/dados-usuario/dados-usuario.component';
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
+import { ContaService } from './services/conta.service';
+import { CommonModule } from '@angular/common';
+import { LogineComponent } from './logine/logine.component';
+import { AdmineComponent } from './admine/admine.component';
+import { HomeeComponent } from './homee/homee.component';
+import { AuthService } from './auth.service';
 
 //pipes
 
@@ -40,19 +60,34 @@ import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
     FooterComponent,
     BarComponent,
     EspacoMoedaPipe,
-    PontoVirgulaPipe
+    PontoVirgulaPipe,
+   
+    DadosUsuarioComponent,
+   
+    LogineComponent,
+   
+    AdmineComponent,
+   
+    HomeeComponent
   ],
   imports: [
+    BrowserModule, //instancia a aplicação no navegador
+    HttpClientModule, //Faz requests http
+    FormsModule, //da suporte data biding component DOM two way
+    RouterModule,
+    CommonModule,
+    
     BrowserModule,
-   
-
+   // Observable,
     FormsModule,
     HttpClientModule, //Faz requests http
     RouterModule,
     RouterModule.forRoot([
+      { path: 'dados', component: DadosUsuarioComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
-/*      ,
+      { path: 'login', component: LoginComponent, canActivate:[] },
+     
+/*     
       { path: 'o-projeto', component: OProjetoComponent },
       { path: 'sobre', component: SobreComponent },
       { path: 'atendimento', component: AtendimentoComponent }, */
@@ -62,11 +97,22 @@ import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
       { path: 'core/transferencia', component: TransferenciasComponent },
       { path: 'core/extratos', component: ExtratosComponent },
 
-      { path: '', redirectTo: 'home', pathMatch: 'full'},
-      { path: '**', redirectTo: 'home', pathMatch: 'full'}
+      //login
+      { path: 'homee', component: HomeeComponent },
+      { path: 'logine', component: LogineComponent },
+      { path: 'admine', component: AdmineComponent},
+
+
+   /*    { path: '', redirectTo: 'home'},
+      { path: '**', redirectTo: 'home'} */
     ])
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    UserService,
+    ContaService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
