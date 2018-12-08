@@ -19,10 +19,11 @@ export class LoginComponent implements OnInit {
         console.log(data);
       })
 
-      this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
+/*       this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => {
       console.log(data);
-    })
-  
+    }) */
+
+     
 
   }
 
@@ -34,11 +35,9 @@ export class LoginComponent implements OnInit {
     const document = target.querySelector('#document').value
     const password = target.querySelector('#password').value
 
-    this.Auth.getUserDetails(document, password)
-    //console.log(document, password)
+  
+    this.Auth.getToken(document, password)
 
-    this.Auth.loadXMLDoc()
-
-  }
+    }
 
 }

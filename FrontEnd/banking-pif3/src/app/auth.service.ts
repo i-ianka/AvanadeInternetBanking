@@ -1,33 +1,67 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
+import {BrowserXhr} from "@angular/http";
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  token ;
   constructor(private http: HttpClient) { 
 
     
   }
 
-  getUserDetails(document, password){
+
+
+  getToken(document, password){
     //post these details on API server
-    return this.http.post('http://localhost:3000/api/login', {
-      document,
-      password
-      
-    }).subscribe( data => {
-      //console.log(data, "servidor")
-      
-    })
- 
+    fetch('https://reqres.in/api/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          //document: 'peter@klaven',
+          //'peter@klaven' cityslicka
+          email: document,
+          password: password          
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      .then(response => response.json())
+      .then(json =>  {
+        console.log(json)
+        this.token = json; 
+        console.log(this.token)
+
+        this.getUserDetails(document, this.token)
+      }
+        )
   }
 
+  getUserDetails(document, token){
+    console.log('infos user')
+   // fetch('https://localhost:3000/api/user/' + document, {
+    fetch('https://reqres.in/api/users/2' , {
+      method: 'GET',      
+      headers: {
+        "token": token.token
+      }
+    })
+    .then(response => response.json())
+    .then(json =>  {
+      console.log(json)
+      console.log('token aqui' +token.token)
+    }
+      )
 
-  loadXMLDoc() {
+
+  }
+
+/*   loadXMLDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -36,6 +70,6 @@ export class AuthService {
     };
     xhttp.open("GET", "http://localhost:3000/api", true);
     xhttp.send();
-  }
+  } */
 
 }
