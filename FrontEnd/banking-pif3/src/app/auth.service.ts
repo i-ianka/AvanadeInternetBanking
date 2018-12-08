@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { HttpClientModule, HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 
 import {BrowserXhr} from "@angular/http";
+import { tokenKey } from '@angular/core/src/view';
 
 
 
@@ -18,30 +19,27 @@ export class AuthService {
 
 
   getToken(document, password){
+
     //post these details on API server
-    fetch('https://reqres.in/api/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          //document: 'peter@klaven',
-          //'peter@klaven' cityslicka
-          email: document,
-          password: password          
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      })
-      .then(response => response.json())
-      .then(json =>  {
-        console.log(json)
-        this.token = json; 
-        console.log(this.token)
-
-        this.getUserDetails(document, this.token)
+     return [
+      {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGFmMzEzNDcyMjI4NjA4MDlmZTg0YSIsImlhdCI6MTU0NDI4NzkxMCwiZXhwIjoxNTQ0Mjg4NTEwfQ.4-WQhyqWVnDEAfXs-Wr_ohZDKIA8NeybDzv8JWVAyfI"
       }
-        )
-  }
+     ] 
+     // return this.http.post('https://localhost:3000/api', {document: document, password: password} )
 
+  /*     const myheader = new HttpHeaders().set('Content-Type', 'localhost:3000/api')
+      let body = new HttpParams();
+      body = body.set('document', document);
+      body = body.set('password', password);
+      return this.http.post('/login', body)  */
+      
+      
+    }    
+    
+  
+ 
   getUserDetails(document, token){
     console.log('infos user')
    // fetch('https://localhost:3000/api/user/' + document, {

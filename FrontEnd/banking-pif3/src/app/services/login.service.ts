@@ -12,14 +12,21 @@ export class LoginService {
   url: string = 'http://localhost:3000/api/'
 
   constructor(private http: HttpClient) {  }
-
+/* 
   getLogin() : Observable<ILogin>{
-    return this.http.get<ILogin>(this.url);
-  }
+    return this.http.get<ILogin>(this.url+'login');
     
-    postLogin(document: number, password:string){
+  } */
+    
+    posLoginGetToken(document: number, password:string){
       
-      return this.http.post(this.url + "login" , document ).toPromise()
+     // return this.http.post(this.url + "login" , document ).toPromise()
+     return [
+      {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGFmMzEzNDcyMjI4NjA4MDlmZTg0YSIsImlhdCI6MTU0NDI4NzkxMCwiZXhwIjoxNTQ0Mjg4NTEwfQ.4-WQhyqWVnDEAfXs-Wr_ohZDKIA8NeybDzv8JWVAyfI"
+      }
+     ]
     }
 /* 
     OnSubmit(userName,password){
@@ -39,13 +46,13 @@ export class LoginService {
     ] */
   }
 
-/*   getLogin(document: number, password: number){
-    document = 87943071452;
+ //getLogin(document: number, password: number){
+ /*    document = 87943071452;
     password = 417810;
-         requ est.headers.set('x-access-token', `${token}`); 
-    request.headers.set('Content-Type', 'application/json'); 
+    request.headers.set('x-access-token', `${token}`); 
+    request.headers.set('Content-Type', 'application/json');  */
     
-    return this.http.get<LoginModule>(this.url + `login/${document}`).toPromise()
-  } */
+  //  return this.http.get<LoginModule>(this.url + `login/${document, password}`)
+  //} 
 
 

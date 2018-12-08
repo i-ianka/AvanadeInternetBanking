@@ -37,7 +37,7 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { ContaService } from './services/conta.service';
 import { CommonModule } from '@angular/common';
-import { LogineComponent } from './logine/logine.component';
+
 import { AdmineComponent } from './admine/admine.component';
 import { HomeeComponent } from './homee/homee.component';
 import { AuthService } from './auth.service';
@@ -64,7 +64,7 @@ import { AuthService } from './auth.service';
    
     DadosUsuarioComponent,
    
-    LogineComponent,
+
    
     AdmineComponent,
    
@@ -85,7 +85,7 @@ import { AuthService } from './auth.service';
     RouterModule.forRoot([
       { path: 'dados', component: DadosUsuarioComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'login', component: LoginComponent, canActivate:[] },
+      { path: 'login', component: LoginComponent},
      
 /*     
       { path: 'o-projeto', component: OProjetoComponent },
@@ -99,7 +99,7 @@ import { AuthService } from './auth.service';
 
       //login
       { path: 'homee', component: HomeeComponent },
-      { path: 'logine', component: LogineComponent },
+    
       { path: 'admine', component: AdmineComponent},
 
 

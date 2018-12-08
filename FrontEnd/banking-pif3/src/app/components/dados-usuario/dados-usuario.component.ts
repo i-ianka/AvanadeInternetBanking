@@ -24,9 +24,9 @@ export class DadosUsuarioComponent implements OnInit {
 
   ngOnInit() {
 
-     this.loginService.getLogin()
+   /*   this.loginService.getLogin()
         .subscribe(data => this.login = data);
-     console.log(this.login);
+     console.log(this.login); */
 
 
     this.conta = this.contaService.getConta()
