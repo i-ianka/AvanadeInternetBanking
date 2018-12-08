@@ -9,7 +9,7 @@ const verifyToken = require('../auth/verifyToken');
 
 let apiRoutes = express.Router();
 
-apiRoutes.get('/account', async function(req, res) {
+apiRoutes.get('/account', verifyToken, async function(req, res) {
     const { number, agency, id } = req.body;
     let account;
     try {
@@ -26,12 +26,8 @@ apiRoutes.get('/account', async function(req, res) {
     } catch (err) {
         return res.status(400).send({ success: false, message: 'Error while trying to get Account\'s data - Code: 0003', error: JSON.stringify(err) });
     }
-    console.log(userAccounts);
 
     if(!userAccounts)  return res.status(400).send({ success: false, message: 'User\'s accounts not founded - Code: 0004' });
-
-    console.log('UserAccounts.accounts: ', userAccounts.accounts);
-    console.log('account.id: ', typeof account.id === 'string');
 
     let userAccountsString = userAccounts.accounts[0];
 
@@ -44,12 +40,10 @@ apiRoutes.get('/account', async function(req, res) {
     
     account = account.toObject();
     account.balance = acc;
-    console.log('Balance: ', account.balance);
-    console.log('Account: ', account);
     res.send({ success: true, account, message: 'Account founded' });
 });
 
-apiRoutes.get('/account/favored',async (req,res)=>{
+apiRoutes.get('/account/favored', verifyToken, async (req,res) => {
     const {document,number,agency} = req.body;
     let userFavored;
     try {
@@ -63,8 +57,6 @@ apiRoutes.get('/account/favored',async (req,res)=>{
     try {
         account = await Account.findOne({number,agency});
     } catch (err) {
-        console.log('Conta: ', account);
-        console.log('Erro: ', err);
         return res.status(400).send({sucess : false, message: 'Error 00023',error:err});               
     }
     if(!account)return res.status(400).send({sucess : false, message: 'Account not founded 0013'})
@@ -75,7 +67,7 @@ apiRoutes.get('/account/favored',async (req,res)=>{
     res.send({sucess: true,message:'Account founded', account});
 });
 
-apiRoutes.post('/account/transfer', async function(req, res) {
+apiRoutes.post('/account/transfer', verifyToken, async function(req, res) {
     const { accNumOrig, accAgeOrig, accNumDes, accAgeDes, transfMsg, value } = req.body;
 
     let accounts;
@@ -93,7 +85,6 @@ apiRoutes.post('/account/transfer', async function(req, res) {
         function(err, docs){
             if (err) return res.status(400).send({ success: false, message: 'Error while trying to get Account\'s data - Code: 0006', error: JSON.stringify(err) });
 
-            console.log('Contas: ', docs);
             if(!docs || docs.length != 2)  return res.status(400).send({ success: false, message: 'Accounts not found - Code: 0007' });
 
             let transactionOrigin = new Transaction({
@@ -115,11 +106,9 @@ apiRoutes.post('/account/transfer', async function(req, res) {
                 .update('accounts', { number: accNumDes, agency: accAgeDes }, { $push: { transactions: transactionDestiny } })
                 .run()
                 .then(function(result) {
-                    console.log('Result: ', result);
                     res.send({ success: true, message: 'Transfer successed - Code: 0008' });
                 })
                 .catch(function(err) {
-                    console.log('Error: ', err);
                     res.send({ success: false, message: 'There was an error during the transfer - Code: 0009', error: err });
                 });
         });

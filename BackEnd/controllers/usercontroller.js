@@ -82,7 +82,7 @@ apiRoutes.put('/update', verifyToken, async (req, res) => {
 
     let query = User.findById(id, { new: true, runValidators: true }, function(err, doc){
         if (err) {
-            console.log('Error while updating data - Code: 0010', err);
+            //console.log('Error while updating data - Code: 0010', err);
             return res.status(400).send({ success: false, message: 'Error while updating data - Code: 0011', error: err });
         }
 
@@ -90,35 +90,20 @@ apiRoutes.put('/update', verifyToken, async (req, res) => {
         doc.save();
         res.send({ success: true, message: 'User Updated with success - Code: 0012' })
     });
-
-    // query = User.findById(id, function(err, doc){
-    //     if(err) {
-    //         console.log('Error while updating data: 124', err);
-    //         return res.status(400).send({ message: 'Error while updating data - Code: 0012', error: err });
-    //     }
-
-    //     let user = doc;
-    //     console.log('UpdatedUser :', user);
-    //     delete user.password;
-    //     res.send({ user });
-    // });
 });
 
 apiRoutes.get('/user/:doc', verifyToken, async (req, res) => {
     let document = req.params.doc;
-    console.log('Passei aqui - Code: 1001');
     let user;
     try {
         user = await User.findOne({ document }).select('-password');
-        // console.log('Documento informado: ', req.params.doc);
-        // console.log('Usuario encontrado: ', user);
     } catch (err) {
         return res.status(400).send({ success: false, message: 'Error while retrieving user - Code: 0013', error: err });
     }
 
     if(!user) return res.status(400).send({ success: false, message: 'User not found - Code: 0014' });
 
-    return res.status(400).send({ success: true, message: 'User founded - Code: 0015', user: user });
+    return res.json({ success: true, message: 'User founded - Code: 0015', user: user });
 });
 
 module.exports = apiRoutes;

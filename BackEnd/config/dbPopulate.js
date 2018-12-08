@@ -257,15 +257,6 @@ const accountsArray = [
     },
 ];
 
-// (async function() {
-//     try{
-//         await db.db.dropCollection('users');
-//         await db.db.dropCollection('account');
-//     } catch (err) {
-//         console.log('Error while dropping Users Database', err);
-//     }
-// })();
-
 usersArray.forEach(function(user, index) {
     let userModel = new User(user);
     let accountModel = new AccountModels.Account(accountsArray[index]);
