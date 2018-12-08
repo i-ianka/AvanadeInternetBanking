@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 
+
 //components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -43,6 +44,8 @@ import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
   ],
   imports: [
     BrowserModule,
+   
+
     FormsModule,
     HttpClientModule, //Faz requests http
     RouterModule,
@@ -53,10 +56,10 @@ import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
       { path: 'sobre', component: SobreComponent },
       { path: 'atendimento', component: AtendimentoComponent },
 
-      { path: 'in/core', component: MenuComponent },
-      {  path: 'in/core/altera-cadastro', component: AlteracaoCadastralComponent },
-      { path: 'in/core/transferencia', component: TransferenciasComponent },
-      { path: 'in/core/extratos', component: ExtratosComponent },
+      { path: 'core', component: MenuComponent },
+      {  path: 'core/altera-cadastro', component: AlteracaoCadastralComponent },
+      { path: 'core/transferencia', component: TransferenciasComponent },
+      { path: 'core/extratos', component: ExtratosComponent },
 
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: '**', redirectTo: 'home', pathMatch: 'full'}

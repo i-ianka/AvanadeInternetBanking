@@ -1,5 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" id="titulo">FIP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a [routerLink]="['/home']" class="nav-link" href="#">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a [routerLink]="['/o-projeto']" class="nav-link">O Projeto</a>
+      </li>
+
+      <li class="nav-item">
+        <a [routerLink]="['/sobre']" class="nav-link">Sobre</a>
+      </li>
+
+      <li class="nav-item">
+        <a [routerLink]="['/atendimento']" class="nav-link" href="#">Atendimento</a>
+      </li>
+
+      <li class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link" href="#">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <p>
   sidebar home
 
   <p>
     <img src="../../../assets/images-delete/navbar.png">
+
