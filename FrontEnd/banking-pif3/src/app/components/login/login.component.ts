@@ -27,14 +27,18 @@ export class LoginComponent implements OnInit {
       const target = event.target
       const document = target.querySelector('#document').value
       const password = target.querySelector('#password').value
-      console.log(document, password)
-  
+     // console.log(document, password)
+
+     this.Auth.recebeDocumento(document)
+    
      this.Auth.getToken(document, password).subscribe(data => {
        
         if(data.success ){
           //redirect to admin
           this.router.navigate(['admine'])
           this.Auth.setLoggedIn(true, data.token)
+         
+
         } else {
           window.alert("erro")
         }

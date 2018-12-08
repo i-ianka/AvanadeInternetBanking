@@ -17,6 +17,7 @@ export class AuthService {
   
   stringToken = '' ;
   loggedInStatus = false
+  documentSalvo ;
 
   constructor(private http: HttpClient) { }
 
@@ -25,36 +26,32 @@ export class AuthService {
     this.stringToken = token
   }
 
+  recebeDocumento(document: number){
+    this.documentSalvo = document
+  }
+
+  get docUser(){
+    return this.documentSalvo
+  }
+
   get isLoggedIn(){
     return this.loggedInStatus
   }
 
+  get theToken(){    
+    return this.stringToken
+  }
+
+
+
   getToken(document, password){
+   
     return this.http.post<myData>('http://localhost:3000/api/login', {
       document,
       password
     })/* .subscribe(data => console.log(data, "works"))  */
-  }
- 
     
-  
-  
- 
-  getUserDetails(document, token){
-    console.log('infos user')
-   // fetch('https://localhost:3000/api/user/' + document, {
-    fetch('https://reqres.in/api/users/2' , {
-      method: 'GET',      
-      headers: {
-        "token": token.token
-      }
-    })
-    .then(response => response.json())
-    .then(json =>  {
-      console.log(json)
-      console.log('token aqui' +token.token)
-    }
-      )
   }
+
 
 }
