@@ -2,20 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 import {BrowserXhr} from "@angular/http";
-
-
+import { TokenService } from './services/token-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   token ;
-  constructor(private http: HttpClient) { 
-
-    
-  }
-
-
+  constructor(private http: HttpClient, private _tokenService: TokenService) { }
 
   getToken(document, password){
     //post these details on API server
@@ -33,13 +27,14 @@ export class AuthService {
       })
       .then(response => response.json())
       .then(json =>  {
-        console.log(json)
-        this.token = json; 
-        console.log(this.token)
-
+        console.log('JSON: ', json.token);
+        this.token = json.token;
+        console.log('Token pego da resposta da requisicao: ', this.token);
+        this._tokenService.setToken(this.token);
         this.getUserDetails(document, this.token)
+        this._tokenService.showToken();
       })
-      .catch(err => console.log('Deu pau: ', err));
+      .catch(err => console.log('An error occurred during the login: ', err));
   }
 
   getUserDetails(document, token){
@@ -48,19 +43,12 @@ export class AuthService {
     fetch('http://localhost:3000/api/user/'+document , {
       method: 'GET',      
       headers: {
-        "token": token.token
+        "token": token
       }
     })
     .then(response => response.json())
-    .then(json =>  {
-      console.log(json)
-      console.log('token aqui' +token.token)
-    }
-      )
-
-
+    .then(json =>  console.log('Usuario: ', json));
   }
-
 /*   loadXMLDoc() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -71,5 +59,4 @@ export class AuthService {
     xhttp.open("GET", "http://localhost:3000/api", true);
     xhttp.send();
   } */
-
 }

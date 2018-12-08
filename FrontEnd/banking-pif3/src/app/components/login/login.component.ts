@@ -18,15 +18,10 @@ export class LoginComponent implements OnInit {
       this.http.get('http://localhost:3000/api').subscribe(data => {
         console.log(data);
       })
-
 /*       this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => {
       console.log(data);
     }) */
-
-     
-
   }
-
 
   loginUser(event){
     event.preventDefault()
@@ -34,10 +29,6 @@ export class LoginComponent implements OnInit {
     const target = event.target
     const document = target.querySelector('#document').value
     const password = target.querySelector('#password').value
-
-  
     this.Auth.getToken(document, password)
-
-    }
-
+  }
 }

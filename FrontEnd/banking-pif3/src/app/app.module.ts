@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 
-
+import { StorageServiceModule } from 'angular-webstorage-service';
 import { Observable, Subject, ReplaySubject, from, of, range } from 'rxjs';
 import { map, filter, switchMap } from 'rxjs/operators';
 
@@ -41,6 +41,7 @@ import { LogineComponent } from './logine/logine.component';
 import { AdmineComponent } from './admine/admine.component';
 import { HomeeComponent } from './homee/homee.component';
 import { AuthService } from './auth.service';
+import { TokenService } from './services/token-service.service';
 
 //pipes
 
@@ -76,7 +77,7 @@ import { AuthService } from './auth.service';
     FormsModule, //da suporte data biding component DOM two way
     RouterModule,
     CommonModule,
-    
+    StorageServiceModule,
     BrowserModule,
    // Observable,
     FormsModule,
@@ -111,7 +112,8 @@ import { AuthService } from './auth.service';
     LoginService,
     UserService,
     ContaService,
-    AuthService
+    AuthService,
+    TokenService,
   ],
   bootstrap: [AppComponent]
 })
