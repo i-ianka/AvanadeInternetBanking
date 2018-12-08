@@ -4,40 +4,40 @@ import { HttpClientModule, HttpClient, HttpHeaders, HttpParams } from '@angular/
 import {BrowserXhr} from "@angular/http";
 import { tokenKey } from '@angular/core/src/view';
 
-
+interface myData {
+  success: boolean,
+  token: string
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  token ;
-  constructor(private http: HttpClient) { 
 
-    
+export class AuthService {
+  
+  stringToken = '' ;
+  loggedInStatus = false
+
+  constructor(private http: HttpClient) { }
+
+  setLoggedIn(value: boolean, token: string) {
+    this.loggedInStatus = value
+    this.stringToken = token
   }
 
-
+  get isLoggedIn(){
+    return this.loggedInStatus
+  }
 
   getToken(document, password){
-
-    //post these details on API server
-     return [
-      {
-        "success": true,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGFmMzEzNDcyMjI4NjA4MDlmZTg0YSIsImlhdCI6MTU0NDI4NzkxMCwiZXhwIjoxNTQ0Mjg4NTEwfQ.4-WQhyqWVnDEAfXs-Wr_ohZDKIA8NeybDzv8JWVAyfI"
-      }
-     ] 
-     // return this.http.post('https://localhost:3000/api', {document: document, password: password} )
-
-  /*     const myheader = new HttpHeaders().set('Content-Type', 'localhost:3000/api')
-      let body = new HttpParams();
-      body = body.set('document', document);
-      body = body.set('password', password);
-      return this.http.post('/login', body)  */
-      
-      
-    }    
+    return this.http.post<myData>('http://localhost:3000/api/login', {
+      document,
+      password
+    })/* .subscribe(data => console.log(data, "works"))  */
+  }
+ 
     
+  
   
  
   getUserDetails(document, token){
@@ -55,19 +55,6 @@ export class AuthService {
       console.log('token aqui' +token.token)
     }
       )
-
-
   }
-
-/*   loadXMLDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        console.log (this.responseText);
-      }
-    };
-    xhttp.open("GET", "http://localhost:3000/api", true);
-    xhttp.send();
-  } */
 
 }

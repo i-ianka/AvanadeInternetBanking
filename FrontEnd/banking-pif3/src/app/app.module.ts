@@ -12,6 +12,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 
 //login
 import {  HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './auth.guard'
 
 
 
@@ -100,7 +101,7 @@ import { AuthService } from './auth.service';
       //login
       { path: 'homee', component: HomeeComponent },
     
-      { path: 'admine', component: AdmineComponent},
+      { path: 'admine', component: AdmineComponent, canActivate: [AuthGuard]},
 
 
    /*    { path: '', redirectTo: 'home'},
@@ -111,7 +112,8 @@ import { AuthService } from './auth.service';
     LoginService,
     UserService,
     ContaService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
