@@ -52,9 +52,10 @@ import { PontoVirgulaPipe } from './pipes/ponto-virgula.pipe';
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'login', component: LoginComponent },
+/*      ,
       { path: 'o-projeto', component: OProjetoComponent },
       { path: 'sobre', component: SobreComponent },
-      { path: 'atendimento', component: AtendimentoComponent },
+      { path: 'atendimento', component: AtendimentoComponent }, */
 
       { path: 'core', component: MenuComponent },
       {  path: 'core/altera-cadastro', component: AlteracaoCadastralComponent },
