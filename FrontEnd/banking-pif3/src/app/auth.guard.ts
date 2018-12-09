@@ -16,16 +16,19 @@ export class AuthGuard implements CanActivate, CanLoad{
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      if(!this.auth.isLoggedIn){ 
-        this.router.navigate(['login'])
+      if(this.auth.isLoggedIn){ 
+        return true
       }
-     return this.auth.isLoggedIn;
+     else
+      this.router.navigate(['login'])
+      return false
   }
 
   private verificaAcesso(){
     if (this.auth.isLoggedIn){
       return true;
-    }
+    }else
+    return false;
   }
   canLoad( route: Route): Observable<boolean> | Promise<boolean> | boolean {
     return this.verificaAcesso()

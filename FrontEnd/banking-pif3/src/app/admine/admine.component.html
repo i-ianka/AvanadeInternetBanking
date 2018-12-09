@@ -1,13 +1,26 @@
 <p>
-  admine works! TOP SECRET
+welcome to internet banking
+
+Olá {{pegaDados}}
+
+Conta: {{ this.pegaDados }}
+{{pegaDados.name}}
   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-  <p> {{ message }}
+  <p> 
 
   <p> <app-menu></app-menu>
+
+
 
    
     <app-logout></app-logout>
   
+    <ul>
+      <li *ngIf="!auth.isLoggedIn()"><a routerLink="/">Home</a></li>
+      <li *ngIf="auth.isLoggedIn()"><a routerLink="/admine/extratos">Extratos</a></li>
+      <li *ngIf="auth.isLoggedIn()"><a routerLink="/admine/transferencia">Transferencia</a></li>
+      <li *ngIf="auth.isLoggedIn()"><a routerLink="/admine/altera-cadastro">Alteração Cadastral</a></li>
+    </ul>
     
     <!-- <button routerLink="/logout">Logout2</a> -->

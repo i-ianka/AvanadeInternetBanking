@@ -60,9 +60,9 @@ export class UserService {
     const headers = new HttpHeaders()
         .set('token', token);
     return this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
-
   }
 
+ 
 
 
 } 

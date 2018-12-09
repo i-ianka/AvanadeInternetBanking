@@ -97,12 +97,11 @@ import { LogoutComponent } from './components/logout/logout.component';
       { path: 'atendimento', component: AtendimentoComponent }, */
 
       { path: 'admine', component: AdmineComponent, 
-               canActivate: [AuthGuard],
-               canLoad:[AuthGuard]},
+               canActivate: [AuthGuard]},
      // { path: 'core', component: MenuComponent,   },
-      {  path: 'admine/altera-cadastro', component: AlteracaoCadastralComponent, canActivate: [AuthGuard],  canLoad:[AuthGuard] },
-      { path: 'admine/transferencia', component: TransferenciasComponent, canActivate: [AuthGuard],  canLoad:[AuthGuard] },
-      { path: 'admine/extratos', component: ExtratosComponent , canActivate: [AuthGuard],  canLoad:[AuthGuard]},
+      {  path: 'admine/altera-cadastro', component: AlteracaoCadastralComponent, canActivate: [AuthGuard] },
+      { path: 'admine/transferencia', component: TransferenciasComponent, canActivate: [AuthGuard] },
+      { path: 'admine/extratos', canActivate: [AuthGuard], component: ExtratosComponent },
 
       //login
       { path: 'homee', component: HomeeComponent },

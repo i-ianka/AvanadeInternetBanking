@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { AuthService } from '../auth.service';
+import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admine',
@@ -9,26 +11,28 @@ import { AuthService } from '../auth.service';
 })
 export class AdmineComponent implements OnInit {
   chaveToken 
+  pegaDados: any 
   numbDocument
-  message = "Loading..."
-  constructor(private user: UserService, private auth: AuthService) { }
+  pegaDados
+  
+  constructor(private user: UserService, private auth: AuthService, http: HttpClient) { }
 
-  ngOnInit() {
-    
-    
-        //console.log('token pelo serviço:   ' + this.auth.theToken)
-        this.chaveToken = this.auth.theToken 
-        this.numbDocument =  this.auth.documentSalvo 
-      // console.log('document pelo serviço:  ' + this.auth.documentSalvo )
-
-        this.user.getUser(this.numbDocument, this.chaveToken).subscribe( data => {
-          /* if(!data.success){
-            localStorage.removeItem('loggedIn')
-          } */
-          
-          this.message = data.message
-          console.log(data.user)
-        })
+  ngOnInit() { 
+    this.ajeitaDados()
   }
 
+  ajeitaDados(){
+            //console.log('token pelo serviço:   ' + this.auth.theToken)
+            this.chaveToken = this.auth.theToken 
+            this.numbDocument =  this.auth.documentSalvo      
+           
+         // console.log('document pelo serviço:  ' + this.auth.documentSalvo )
+
+           return this.user.getUser(this.numbDocument, this.chaveToken).subscribe( data => {
+              this.pegaDados = data.user.name
+              console.log(data)
+           })
+           console.log(this.pegaDados)
+           
+  }
 }

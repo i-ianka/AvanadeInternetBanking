@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
-import { JwtHelper } from 'angular2-jwt';
+import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import {BrowserXhr} from "@angular/http";
 import { tokenKey } from '@angular/core/src/view';
 
@@ -40,8 +40,20 @@ export class AuthService {
   }
 
   get isLoggedIn(){
-    return this.loggedInStatus
-  
+    return tokenNotExpired();
+    
+   /*      let jwtHelper = new JwtHelper();
+        let token = localStorage.getItem('token');
+        console.log("funciona token", token)
+
+        if (!token) return false;
+        let expirationDate = jwtHelper.getTokenExpirationDate(token);
+        let isExpired = jwtHelper.isTokenExpired(token);
+        console.log("expiration", expirationDate)
+        console.log("isExpired", isExpired)
+
+        return !isExpired; */
+   // return this.loggedInStatus  
     //return JSON.parse(localStorage.getItem('LoggedIn') || this.loggedInStatus.toString())
   }
 
