@@ -53,16 +53,16 @@ export class UserService {
   }
 
 
-  getMyUser(document, token){    
-    return this.http.get<myUser>('http://localhost:3000/api/user/'+document, {headers: token})
-  }
- 
-  
+   
 
   getUser(document, token): Observable<Iuser>{
+    localStorage.setItem('token', token)
     const headers = new HttpHeaders()
         .set('token', token);
     return this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
 
   }
+
+
+
 } 

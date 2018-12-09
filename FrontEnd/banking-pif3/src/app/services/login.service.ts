@@ -12,47 +12,6 @@ export class LoginService {
   url: string = 'http://localhost:3000/api/'
 
   constructor(private http: HttpClient) {  }
-/* 
-  getLogin() : Observable<ILogin>{
-    return this.http.get<ILogin>(this.url+'login');
+}
     
-  } */
-    
-    posLoginGetToken(document: number, password:string){
-      
-     // return this.http.post(this.url + "login" , document ).toPromise()
-     return [
-      {
-        "success": true,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGFmMzEzNDcyMjI4NjA4MDlmZTg0YSIsImlhdCI6MTU0NDI4NzkxMCwiZXhwIjoxNTQ0Mjg4NTEwfQ.4-WQhyqWVnDEAfXs-Wr_ohZDKIA8NeybDzv8JWVAyfI"
-      }
-     ]
-    }
-/* 
-    OnSubmit(userName,password){
-      this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
-       localStorage.setItem('userToken',data.access_token);
-       this.router.navigate(['/home']);
-     },
-     (err : HttpErrorResponse)=>{
-       this.isLoginError = true;
-     });
-   } */
-/*     return [
-      { 
-        "success": true,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjMGFmMzEzNDcyMjI4NjA4MDlmZTg0YSIsImlhdCI6MTU0NDI0Mjg5NywiZXhwIjoxNTQ0MjQzNDk3fQ.S6eIT707zsmBKJ0xkUoBRPXRs2xSaqXz0R7eS_Pvo1c"
-      }
-    ] */
-  }
-
- //getLogin(document: number, password: number){
- /*    document = 87943071452;
-    password = 417810;
-    request.headers.set('x-access-token', `${token}`); 
-    request.headers.set('Content-Type', 'application/json');  */
-    
-  //  return this.http.get<LoginModule>(this.url + `login/${document, password}`)
-  //} 
-
 

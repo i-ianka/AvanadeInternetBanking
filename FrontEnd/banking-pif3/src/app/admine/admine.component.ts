@@ -10,20 +10,25 @@ import { AuthService } from '../auth.service';
 export class AdmineComponent implements OnInit {
   chaveToken 
   numbDocument
-    message = "Loading..."
+  message = "Loading..."
   constructor(private user: UserService, private auth: AuthService) { }
 
   ngOnInit() {
     
-    //console.log('token pelo serviço:   ' + this.auth.theToken)
-    this.chaveToken = this.auth.theToken 
-    this.numbDocument =  this.auth.documentSalvo 
-   // console.log('document pelo serviço:  ' + this.auth.documentSalvo )
+    
+        //console.log('token pelo serviço:   ' + this.auth.theToken)
+        this.chaveToken = this.auth.theToken 
+        this.numbDocument =  this.auth.documentSalvo 
+      // console.log('document pelo serviço:  ' + this.auth.documentSalvo )
 
-    this.user.getUser(this.numbDocument, this.chaveToken).subscribe( data => {
-      this.message = data.message
-      console.log(data.user)
-    })
+        this.user.getUser(this.numbDocument, this.chaveToken).subscribe( data => {
+          /* if(!data.success){
+            localStorage.removeItem('loggedIn')
+          } */
+          
+          this.message = data.message
+          console.log(data.user)
+        })
   }
 
 }

@@ -31,13 +31,11 @@ export class LoginComponent implements OnInit {
 
      this.Auth.recebeDocumento(document)
     
-     this.Auth.getToken(document, password).subscribe(data => {
-       
-        if(data.success ){
+     this.Auth.getToken(document, password).subscribe(data => {       
+        if(data.success == true){
           //redirect to admin
           this.router.navigate(['admine'])
-          this.Auth.setLoggedIn(true, data.token)
-         
+          this.Auth.setLoggedIn(true, data.token)       
 
         } else {
           window.alert("erro")
@@ -45,5 +43,7 @@ export class LoginComponent implements OnInit {
       })
      
     }
+
+
 
 }

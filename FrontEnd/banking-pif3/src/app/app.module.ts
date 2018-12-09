@@ -42,6 +42,7 @@ import { CommonModule } from '@angular/common';
 import { AdmineComponent } from './admine/admine.component';
 import { HomeeComponent } from './homee/homee.component';
 import { AuthService } from './auth.service';
+import { LogoutComponent } from './components/logout/logout.component';
 
 //pipes
 
@@ -69,7 +70,9 @@ import { AuthService } from './auth.service';
    
     AdmineComponent,
    
-    HomeeComponent
+    HomeeComponent,
+   
+    LogoutComponent
   ],
   imports: [
     BrowserModule, //instancia a aplicação no navegador
@@ -88,20 +91,23 @@ import { AuthService } from './auth.service';
       { path: 'home', component: HomeComponent },
       { path: 'login', component: LoginComponent},
      
-/*     
+/* --------------one single page app    
       { path: 'o-projeto', component: OProjetoComponent },
       { path: 'sobre', component: SobreComponent },
       { path: 'atendimento', component: AtendimentoComponent }, */
 
-      { path: 'core', component: MenuComponent },
-      {  path: 'core/altera-cadastro', component: AlteracaoCadastralComponent },
-      { path: 'core/transferencia', component: TransferenciasComponent },
-      { path: 'core/extratos', component: ExtratosComponent },
+      { path: 'admine', component: AdmineComponent, 
+               canActivate: [AuthGuard],
+               canLoad:[AuthGuard]},
+     // { path: 'core', component: MenuComponent,   },
+      {  path: 'admine/altera-cadastro', component: AlteracaoCadastralComponent, canActivate: [AuthGuard],  canLoad:[AuthGuard] },
+      { path: 'admine/transferencia', component: TransferenciasComponent, canActivate: [AuthGuard],  canLoad:[AuthGuard] },
+      { path: 'admine/extratos', component: ExtratosComponent , canActivate: [AuthGuard],  canLoad:[AuthGuard]},
 
       //login
       { path: 'homee', component: HomeeComponent },
-    
-      { path: 'admine', component: AdmineComponent, canActivate: [AuthGuard]},
+      { path: 'logout', component: LoginComponent},
+     
 
 
    /*    { path: '', redirectTo: 'home'},
