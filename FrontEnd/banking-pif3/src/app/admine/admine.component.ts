@@ -13,7 +13,7 @@ export class AdmineComponent implements OnInit {
   chaveToken 
   pegaDados: any 
   numbDocument
-  pegaDados
+
   
   constructor(private user: UserService, private auth: AuthService, http: HttpClient) { }
 

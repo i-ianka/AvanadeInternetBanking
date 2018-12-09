@@ -43,6 +43,9 @@ import { AdmineComponent } from './admine/admine.component';
 import { HomeeComponent } from './homee/homee.component';
 import { AuthService } from './auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
+import { HomeBancoComponent } from './components/home-banco/home-banco.component';
+import { AlterarCadastroComponent } from './components/alterar-cadastro/alterar-cadastro.component';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 
 //pipes
 
@@ -72,7 +75,13 @@ import { LogoutComponent } from './components/logout/logout.component';
    
     HomeeComponent,
    
-    LogoutComponent
+    LogoutComponent,
+   
+    HomeBancoComponent,
+   
+    AlterarCadastroComponent,
+   
+    MenuLateralComponent
   ],
   imports: [
     BrowserModule, //instancia a aplicação no navegador
