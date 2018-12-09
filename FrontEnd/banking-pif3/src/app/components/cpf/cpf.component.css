@@ -1,0 +1,49 @@
+input.textchild-estilo,  label {
+    text-align: left;
+    color: #888888;
+    cursor: text;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+input.textchild-estilo:focus,
+input.textchild-estilo:valid {
+  border-bottom: 2px solid #888888;
+  transition: border-bottom 0.35s;
+}
+
+input.textchild-estilo:focus + label,
+input.textchild-estilo:valid + label {
+  transform: translateY(-4px);
+  font-size: 10px;
+  transition: all 0.35s ease;
+  color: #888888;
+}
+
+.input-box {
+  width: 155px;
+  cursor: text;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 20px;
+  font-family: "Arial Rounded MT";
+  margin-top: 1%;
+}
+
+input.textchild-estilo {
+  order: 2;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #888888;
+  position: relative;
+  z-index: 100;
+  height: 20px;
+  outline: none;
+  transition: border-bottom 0.35s;
+}
+
+label {
+  line-height: 0;
+  transform: translateY(10px);
+}

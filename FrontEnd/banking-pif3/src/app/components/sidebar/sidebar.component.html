@@ -1,38 +1,105 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" id="titulo">FIP</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- NAVBAR -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light navbar-fixed">
+  <div class="container"> -->
+    
+      <!-- INICIO MENU RESPONSIVO -->
+      <!-- <div class="display-none menu-responsivo">
+        <div class="collapse navbar-collapse list-style-none margin-none nav-sub-menu" id="navbarResponsive">
+          <ul class="list-style-none margin-none">  
+            <li class="nav-item">
+              <app-cpf></app-cpf>
+              <app-button></app-button> 
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto display-none">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">O Projeto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Atendimento</a>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+      <!-- FIM MENU RESPONSIVO -->
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a [routerLink]="['/home']" class="nav-link" href="#">Home</a>
-      </li>
+    <!-- <div class="collapse navbar-collapse" id="textoNavbar">
+      <ul class="navbar-nav mr-auto align-navbar">
+        <li class="nav-item active widht-full">
+          <a class="nav-link" href="#">O projeto</a>
+        </li>
+        <li class="nav-item widht-full">
+          <a class="nav-link" href="#">Sobre</a>
+        </li>
+        <li class="nav-item widht-full">
+          <a class="nav-link" href="#">Atendimento</a>
+        </li>
+      </ul>
+      <app-cpf></app-cpf>
+        <app-button></app-button>
+      </div>
+  </div>
+</nav> -->
 
-      <li class="nav-item">
-        <a [routerLink]="['/o-projeto']" class="nav-link">O Projeto</a>
-      </li>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-fixed">
+  <div class="container">
+  <a [routerLink]="['/home']" class="navbar-brand" id="titulo"><img src="../../../assets/images/logo-branco.png" class="logo-menu-1 navbar-brand" /></a>
 
-      <li class="nav-item">
-        <a [routerLink]="['/sobre']" class="nav-link">Sobre</a>
-      </li>
+    <!-- INICIO MENU RESPONSIVO -->
+    <div class="display-none menu-responsivo">
+      <div class="collapse navbar-collapse list-style-none margin-none nav-sub-menu" id="navbarResponsive">
+        <ul class="list-style-none margin-none">  
+          <li class="nav-item">
+            <app-cpf></app-cpf>
+            <app-button></app-button> 
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto display-none">
+          <li class="nav-item active">
+            <a [routerLink]="['/o-projeto']" class="nav-link">O Projeto</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/sobre']" class="nav-link">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/atendimento']" class="nav-link" href="#">Atendimento</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- FIM MENU RESPONSIVO -->
 
-      <li class="nav-item">
-        <a [routerLink]="['/atendimento']" class="nav-link" href="#">Atendimento</a>
-      </li>
-
-      <li class="nav-item">
-        <a [routerLink]="['/login']" class="nav-link" href="#">Login</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto align-navbar">
+        <li class="nav-item active widht-full">
+          <a [routerLink]="['/o-projeto']" class="nav-link">O Projeto</a>
+        </li>
+        <li class="nav-item widht-full">
+          <a [routerLink]="['/sobre']" class="nav-link">Sobre</a>
+        </li>
+        <li class="nav-item widht-full">
+          <a [routerLink]="['/atendimento']" class="nav-link" href="#">Atendimento</a>
+        </li>
+      </ul>
+      <app-cpf></app-cpf>
+      <app-button></app-button>
+    </div>
   </div>
 </nav>
+      <!-- <li class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link" href="#">Login</a>
+      </li> -->
+  
+<!-- 
+
 
 <p>
   sidebar home
 
   <p>
-    <img src="../../../assets/images-delete/navbar.png">
-
+    <img src="../../../assets/images-delete/navbar.png"> -->
+ 
