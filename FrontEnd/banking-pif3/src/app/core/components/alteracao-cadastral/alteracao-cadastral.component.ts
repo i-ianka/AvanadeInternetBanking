@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AuthService } from 'src/app/auth.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-alteracao-cadastral',
@@ -9,7 +10,9 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class AlteracaoCadastralComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+ teste = "altera dados works"
+
+  constructor(private user: UserService, private auth: AuthService) { }
 
   ngOnInit() {
   }

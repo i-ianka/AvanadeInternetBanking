@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../model/user/user.module'; 
 import { Iuser } from './user-obs';
+
 import { Observable } from 'rxjs';
 //import 'rxjs/add/operator/catch';
 import { Location } from '@angular/common';
@@ -13,29 +14,7 @@ import { HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/observable/fromPromise';
 import { AuthService } from '../auth.service';
 
-interface myUser {
-  success: boolean,
-  message: string,
-  user: {
-      address: {
-          street: string,
-          number: number,
-          complement: string,
-          zipcode: number,
-          neighborhood: string,
-          city: string
-      },
-      accounts: [
-          number
-      ],
-      _id: string,
-      name: string,
-      document: number,
-      email: string,
-      phone: number,
-      __v: number
-  }
-}
+
 
 
 @Injectable()
@@ -44,25 +23,70 @@ export class UserService {
   url: string = 'http://localhost:3000/api/'
   id: number = 87943071452
   stringToken; 
-  
+  dadosUserLogado;
   constructor(private http: HttpClient, private auth: AuthService) {  }
 
 
   getApi(){
-    return this.http.get<IUser>(this.url);
-  }
-
-
-   
+    return this.http.get<Iuser>(this.url);
+  } 
 
   getUser(document, token): Observable<Iuser>{
-    localStorage.setItem('token', token)
-    const headers = new HttpHeaders()
+       const headers = new HttpHeaders()
         .set('token', token);
-    return this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+     this.dadosUserLogado = this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+      return  this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+   }
+
+   getConta(document, token): Observable<Iuser>{
+ /*    ApiRoutes.get('/account', verifyToken, async function(req, res) {
+      const { number, agency, id } = req.body; */
+        const headers = new HttpHeaders()
+        .set('token', token);
+      this.dadosUserLogado = this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+      return  this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+    }
+
+    getFavorecido(){
+      /* apiRoutes.get('/account/favored', verifyToken, async (req,res) => {
+        const {document,number,agency} = req.body; */
+    }
+
+    postTransferencia(){
+      /* apiRoutes.post('/account/transfer', verifyToken, async function(req, res) {
+        const { accNumOrig, accAgeOrig, accNumDes, accAgeDes, transfMsg, value } = req.body; */
+    
+    }    
+
+
+    putAtualizaCadastro(){
+      /* phone, email, password, newPassword, id 
+      apiRoutes.put('/update', verifyToken, async (req, res) => {
+        const { phone, email, password, newPassword, id } = req.body;
+        let user; */
+    }
+
+  get docGetUser(){
+    console.log('dados user', this.dadosUserLogado)
+    return this.dadosUserLogado
+  }
+   
+  printNaTela(){
+    let token 
+    let document
+    let dados
+    document = this.auth.docUser
+    token = this.auth.theToken;
+    const headers = new HttpHeaders()
+      .set('token', token);
+     
+      this.http.get('http://localhost:3000/api/user/' + document, { headers: headers })
+      .subscribe(response => {
+         dados = response;
+         dados.log(dados)
+      });
   }
 
- 
 
 
 } 

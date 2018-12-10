@@ -43,6 +43,9 @@ import { AdmineComponent } from './admine/admine.component';
 import { HomeeComponent } from './homee/homee.component';
 import { AuthService } from './auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
+import { AutenticacaoService } from './services/autenticacao.service';
+import { AlteraCadastroService } from './services/altera-cadastro.service';
+import { TransacoesService } from './services/transacoes.service';
 
 //pipes
 
@@ -98,7 +101,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 
       { path: 'admine', component: AdmineComponent, 
                canActivate: [AuthGuard]},
-     // { path: 'core', component: MenuComponent,   },
+      { path: 'core', component: MenuComponent  },
       {  path: 'admine/altera-cadastro', component: AlteracaoCadastralComponent, canActivate: [AuthGuard] },
       { path: 'admine/transferencia', component: TransferenciasComponent, canActivate: [AuthGuard] },
       { path: 'admine/extratos', canActivate: [AuthGuard], component: ExtratosComponent },
@@ -118,7 +121,11 @@ import { LogoutComponent } from './components/logout/logout.component';
     UserService,
     ContaService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    AutenticacaoService,
+    AlteraCadastroService,
+    TransacoesService
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { HttpClientModule, HttpClient, HttpHeaders, HttpParams } from '@angular/
 import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import {BrowserXhr} from "@angular/http";
 import { tokenKey } from '@angular/core/src/view';
+import { Router } from '@angular/router';
 
 interface myData {
   success: boolean,
@@ -18,10 +19,11 @@ export class AuthService {
   stringToken = '' ;
   private loggedInStatus = false
   documentSalvo ;
+  
 
   //private loggedInStatus = JSON.parse(localStorage.getItem('LoggedIn') || 'false')
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   setLoggedIn(value: boolean, token: string) {
     this.loggedInStatus = value
@@ -66,6 +68,7 @@ export class AuthService {
     localStorage.setItem('loggedIn', 'false')
     localStorage.removeItem('token')
     localStorage.removeItem('loggedIn')
+    this.router.navigate(['home'])
   }
 
 

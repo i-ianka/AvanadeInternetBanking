@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
      this.Auth.getToken(document, password).subscribe(data => {       
         if(data.success == true){
           //redirect to admin
-          this.router.navigate(['admine'])
+          this.router.navigate(['core'])
           this.Auth.setLoggedIn(true, data.token)       
           //localStorage.setItem('token', data.token)
         } else {
