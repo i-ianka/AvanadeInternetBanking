@@ -85,7 +85,7 @@ export class UserService {
 
 
     putAtualizaCadastro(phone, email, password, newPassword, id){
-      /* phone, email, password, newPassword, id 
+      /* phone, email, password, newPassword, id n
       apiRoutes.put('/update', verifyToken, async (req, res) => {
         const { phone, email, password, newPassword, id } = req.body;
         let user; */
