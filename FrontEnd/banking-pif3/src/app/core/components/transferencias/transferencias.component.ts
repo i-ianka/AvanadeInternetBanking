@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncaoService } from 'src/app/services-css/funcao.service';
 
 @Component({
   selector: 'app-transferencias',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferenciasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private funcService : FuncaoService) { }
 
   ngOnInit() {
+    var a=  this.funcService.getDados
+    console.log(a)
   }
+
+  
 
 }

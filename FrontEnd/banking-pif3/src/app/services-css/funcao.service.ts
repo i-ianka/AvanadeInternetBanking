@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class FuncaoService {
 
   constructor() { }
+
+  getDados(){
+   let  frase = "teste"
+  }
 }

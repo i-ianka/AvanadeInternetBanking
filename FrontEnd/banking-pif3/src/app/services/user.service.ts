@@ -16,10 +16,20 @@ import { AuthService } from '../auth.service';
 
 
 export interface Iconta{
-  number: string,
-  agency: string
- // date: data
-  transactions: any
+  success: boolean
+  account: {
+    : {
+          street: string,
+          number: number,
+          complement: string,
+          zipcode: number,
+          neighborhood: string,
+          city: string
+      },
+      number: string,
+      agency: string
+    // date: data
+      transactions: any
 }
 
 export interface Itransacao{
