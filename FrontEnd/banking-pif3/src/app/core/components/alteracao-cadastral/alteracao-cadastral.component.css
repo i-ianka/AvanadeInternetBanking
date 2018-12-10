@@ -1,0 +1,288 @@
+
+#pagina1 {
+	display: inline-block;
+}
+
+/* CONTA-CORRENTE CONTA POUPANCA CHECKBOX */
+
+h3 {
+	color: #382B2D;
+	font-family: "Arial Rounded MT";
+	font-weight: bold;
+}
+
+.botao {
+	background-color: #CC3A56;
+	border: none;
+	box-shadow: 3px 3px 3px #A3A3A3;
+	color: white;
+	padding: 5px;
+	width: 160px;
+	text-align: center;
+	font-family: "Arial Rounded MT";
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 26px 2px;
+	cursor: pointer;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.botao:hover {
+	color: #fff;
+	background-color: rgb(175, 52, 76);
+	outline: none;
+}
+
+.botao:focus {
+	outline: none;
+	width: 198px;
+	padding: 4px;
+}
+
+.botao:active {
+	outline: none;
+}
+
+.indicadores {
+	color: #CC3A56;
+	font-family: "Arial Rounded MT";
+	font-weight: bold;
+	width: 12px;
+}
+
+.titulos-icones {
+	margin: 6px;
+	width: 40px;
+}
+
+
+/* GRID MENU-BANCO */
+
+html {
+	position: relative;
+	min-height: 100%;
+	font-family: "Arial Rounded MT";
+}
+
+body {
+  height:calc(100%-100px);
+  height:-moz-calc(100%-100px);
+  height:-webkit-calc(100%-100px);
+}
+
+
+ 
+
+    /* MENU LATERAL     */
+
+
+/* LOGO */ 
+
+
+ 
+
+/* BOTAO MENU */
+@media only screen and (min-width : 1024px) { 
+
+	.espaco-lateral{
+		margin-left:14%;
+        
+		
+	}
+	}
+
+/* PÁGINA LOGIN */
+
+label {
+	text-align: left;
+	color: #ffffff;
+	cursor: text;
+	width: 100%;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+
+
+/* ANIMAÇÃO DOA ICONES */
+
+
+
+/* Wobble Vertical */
+
+/* MEDIA QUERIES */
+
+@media (max-width: 575.98px) {
+	.titulos-icones {
+		margin: 6px;
+		width: 30px;
+	}
+}
+
+ :root {
+	--input-padding-x: 0.75rem;
+	--input-padding-y: 0.75rem;
+}
+
+
+
+
+
+/* LABEL DAS INPUTS DOS FORMS */
+
+.input-box,
+.input-box-2 {
+	width: 220px;
+	cursor: text;
+	display: flex;
+	flex-flow: column wrap;
+	padding-left: 20px;
+	font-family: "Arial Rounded MT";
+	margin-top: 5%;
+}
+
+.input-box-2 {
+	margin-top: 0%;
+}
+
+.texto-tipoConta {
+	margin-bottom: 5%;
+	text-align: left;
+	color: #888888;
+	cursor: text;
+	width: 100%;
+	font-size: 10px;
+	letter-spacing: 2px;
+}
+
+input.textchild-estilo,
+label {
+	text-align: left;
+	color: #888888;
+	cursor: text;
+	width: 100%;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+select {
+	margin: 0;
+	margin-top: 12px;
+	font-family: "Arial Rounded MT";
+	font-size: 14px;
+	background: transparent;
+	color: #888888;
+	text-decoration: none;
+	outline: none;
+	border: 0;
+	border-bottom: 1px solid #888888;
+}
+
+input.textchild-estilo {
+	order: 2;
+	background: none;
+	border: 0;
+	border-bottom: 1px solid #888888;
+	position: relative;
+	z-index: 100;
+	height: 20px;
+	outline: none;
+	transition: border-bottom 0.35s;
+}
+
+input.textchild-estilo:focus,
+input.textchild-estilo:valid {
+	border-bottom: 2px solid #888888;
+	transition: border-bottom 0.35s;
+}
+
+input.textchild-estilo:focus+label,
+input.textchild-estilo:valid+label {
+	transform: translateY(-4px);
+	font-size: 10px;
+	transition: all 0.35s ease;
+	color: #888888;
+}
+
+label {
+	line-height: 0;
+	transform: translateY(10px);
+	transition: all 0.35s ease;
+}
+
+
+/* INPUT DATA */
+
+input::-webkit-datetime-edit {
+	color: transparent;
+}
+
+
+
+
+
+/* GRID DOS FORMS DEFINIDOS EM LADO ESQUEROD/DIREITO */
+
+@media(min-width:468px) {
+	.container-1 {
+		display: flex;
+		align-items:flex-start;
+         /* align-items:flex-end;
+         flex-direction:column; */
+		 
+	
+
+}
+
+.container-1 div {
+	/* border:1px #ccc solid;
+     */
+	padding: 3px;
+}
+
+.box-1 {
+	flex: 1;
+	order: 1;
+	justify-content: flex-end;
+	align-content: flex-end;
+	align-items: flex-end;
+}
+
+.box-2 {
+	flex: 1;
+	order: 2;
+}
+}
+/* Include this to make it visible when input is clicked */
+
+input:focus::-webkit-datetime-edit {
+	color: #000;
+}
+
+
+/* FOOTER */
+
+
+
+
+/* MUDANÇA DE ESTILO DO SCROLL */
+
+ ::-webkit-scrollbar {
+	width: 12px;
+	padding: 60 25%;
+	opacity: 0.5;
+}
+
+ ::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+	background-color: #382B2D;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+

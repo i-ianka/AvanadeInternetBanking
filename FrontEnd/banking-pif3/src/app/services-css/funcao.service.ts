@@ -7,7 +7,9 @@ export class FuncaoService {
 
   constructor() { }
 
+
   getDados(){
    let  frase = "teste"
   }
+
 }

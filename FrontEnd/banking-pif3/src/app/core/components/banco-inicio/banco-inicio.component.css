@@ -1,0 +1,343 @@
+
+.card-menu {
+	min-width: 28rem;
+	max-width: 28rem;
+	min-height: 11rem;
+	max-height: 11rem;
+	display: inline-block;
+	margin: 0 auto 20px auto !important;
+	justify-content: space-around;
+	justify-items: center;
+	align-items: center;
+	text-align: center;
+}
+
+.card-menu:hover{
+  background: #F1F1F1;
+}
+
+.card {
+	box-shadow: 3px 3px 3px #A3A3A3;
+	background: #FCFAFA;
+	border-radius: 5% 5%;
+	border: none;
+}
+
+.logo-menu-1 {
+	width: 100px;
+}
+
+/* CONTA-CORRENT CONTA POUPANCA CHECKBOX */
+
+h4 {
+	color: #382B2D;
+	font-family: "Arial Rounded MT";
+	font-weight: bold;
+}
+
+h4 {
+	margin-top: 10px;
+}
+
+.botao-acessar-conta {
+	background-color: #CC3A56;
+	border: none;
+	box-shadow: 3px 3px 3px #A3A3A3;
+	color: white;
+	padding: 5px;
+	width: 160px;
+	text-align: center;
+	font-family: "Arial Rounded MT";
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 26px 2px;
+	cursor: pointer;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.botao-acessar-conta {
+	box-shadow: 3px 3px 3px rgb(32, 31, 31);
+}
+
+.indicadores {
+	color: #CC3A56;
+	font-family: "Arial Rounded MT";
+	font-weight: bold;
+	width: 12px;
+}
+
+.icones {
+	margin: 6px;
+	width: 50px;
+	outline: none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+
+/* GRID MENU-BANCO */
+
+html {
+	position: relative;
+	min-height: 100%;
+	font-family: "Arial Rounded MT";
+}
+
+body {
+  height:calc(100%-100px);
+  height:-moz-calc(100%-100px);
+  height:-webkit-calc(100%-100px);
+}
+
+#wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+
+ 
+
+    /* MENU LATERAL     */
+
+
+/* LOGO */ 
+
+
+ 
+
+/* BOTAO MENU */
+
+/* PÁGINA LOGIN */
+
+
+a{
+  color: #afafaf;
+}
+
+.footer-copyright{
+  color: #CC3A56;
+
+}
+
+
+/* ANIMAÇÃO DOA ICONES */
+.wobble-vertical
+ {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  
+}
+
+
+
+/* Wobble Vertical */
+
+@-webkit-keyframes wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    -ms-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.wobble-vertical {
+  display: inline-block;
+}
+
+.wobble-vertical:hover {
+  -webkit-animation-name: wobble-vertical;
+  animation-name: wobble-vertical;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+.pagina-menu-inicio p{
+  color:#382B2D;
+  font-weight: 500;
+
+ }
+
+
+ .pagina-menu-inicio{
+  /* box-shadow: 3px 3px 3px #A3A3A3; */
+  height: 110px;  
+  display: flex;
+  /* background: #F1F1F1; */
+  z-index: 1000;
+ }
+
+.box-3 {
+	flex: 1;
+	order: 1;
+  width: 50%;
+  margin:2%;
+  margin-left:7%;
+  z-index:1;
+}
+
+.box-4 {
+	flex: 1;
+	order: 2;
+	color:#f1f1f1;
+  display: flex;
+   text-align: end;
+  width: 50%;
+   margin-top:20px;
+   margin-left:2%;
+
+ 
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 575.98px) {
+	h4 {
+		font-size: 1.1em;
+	}
+	.icones {
+		margin: 6px;
+		width: 30px;
+	}
+	.card-menu {
+		min-width: 23rem;
+		max-width: 23rem;
+		min-height: 8rem;
+		max-height: 5rem;
+  }
+
+
+  .box-3 {
+margin: 5%;
+    /* background: #CC3A56; */
+    text-align: left;
+    }
+
+    .pagina-menu-inicio {
+      display: flex;
+     height: auto;
+   z-index: 20000;
+    }
+}
+
+ :root {
+	--input-padding-x: 0.75rem;
+	--input-padding-y: 0.75rem;
+}
+
+
+
+
+
+/* LABEL DAS INPUTS DOS FORMS */
+
+
+/* INPUT DATA */
+
+
+
+
+
+/* GRID DOS FORMS DEFINIDOS EM LADO ESQUEROD/DIREITO */
+/* Include this to make it visible when input is clicked */
+
+
+/* FOOTER */
+
+
+
+
+/* MUDANÇA DE ESTILO DO SCROLL */
+
+ ::-webkit-scrollbar {
+	width: 12px;
+	padding: 60 25%;
+	opacity: 0.5;
+}
+
+ ::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+	background-color: #382B2D;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+

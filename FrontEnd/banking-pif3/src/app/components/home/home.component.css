@@ -1,0 +1,89 @@
+/* ---------------------------NAV BAR PAGINA INICIAL---------------------------*/
+
+/* ---------------------------MENU RESPONSIVO--------------------------- */
+
+/* ---------------------------SLIDE DA PAGINA INICIAL--------------------------- */
+
+.slide1-text1 > h5 {
+  position: absolute;
+  right: 60%;
+  bottom: 180px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.slide1-text2 > h5 {
+  position: absolute;
+  right: 15%;
+  bottom: 180px;
+  left: 60%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.d-md-block {
+  display: block!important;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* ---------------------------SOBRE O PROJETO--------------------------- */
+
+/* ---------------------------CONHEÇA O NOSSO TIME--------------------------- */
+
+/* ---------------------------ESTILO GLOBAL--------------------------- */
+
+h5{
+  color: #CC3A56;
+  font-family: "Arial Rounded MT";
+  font-weight: bold;
+}
+
+h3{
+  color: #382B2D;
+  font-family: "Arial Rounded MT";
+  font-weight: bold;
+}
+
+/* ---------------------------CARDS--------------------------- */
+
+/* ---------------------------ANIMACAO MENU HAMBURGER--------------------------- */
+
+/* ---------------------------FOOTER--------------------------- */
+
+/* ---------------------------MUDANÇA DE ESTILO DO SCROLL--------------------------- */
+::-webkit-scrollbar {
+
+  width: 12px;
+  padding: 60 25%;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background-color: #382B2D
+  ;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+/* ---------------------------LABEL DAS INPUTS DOS FORMS--------------------------- */

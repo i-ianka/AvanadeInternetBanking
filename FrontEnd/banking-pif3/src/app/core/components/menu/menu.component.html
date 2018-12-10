@@ -1,7 +1,38 @@
+<div class="pagina-menu-inicio">
+  <div class="box-3-menu-lateral">
+    <div  id="logo-menu-lateral">.</div>
+  </div>
+
+ <div class="box-4 col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+    <p id="agenciaConta">Agência: 2926 | Conta: 0035318-5    <button type="submit" class="botao-acessar-conta" id="CancelarAcesso">Sair</button>  </p>
+    </div>
+</div>
+
+  <input type="checkbox" class="menu" id="menu" onclick="trocaLogo()"> 
+<label for="menu"  class="hamburguer-icone">
+  <div class="hamburguer-botao diagonal part-1"></div>
+  <div class="hamburguer-botao horizontal"></div>
+  <div class="hamburguer-botao diagonal part-2"></div>
+</label>
+
+<div id="menu">
+ <ul class="menu-interno">
+ <li class=" header-menu"></li>
+ <br>
+ <li> <span id="nome"> Olá, Palloma Adolfi</span> </li>
+ <li><span> <img src="../../../assets/images/menu-saldo.png" class="menu-icones"/> Saldo disponível  <img src="../../../assets/images/expandir.png" class="indicadores"/></span>
+ <span id="saldo-menu">Total(R$): <a id="saldo">3.200,00</a></span></li><br>
+ <li class="wobble-vertical"> <a [routerLink]="['menu']" href=""><span> <img src="../../../assets/images/menu-home.png" class="menu-icones"/> Inicio</span></a></li>
+ <li class="wobble-vertical"><a [routerLink]="['transferencia']" href=""><span> <img src="../../../assets/images/../../../assets/images/menu-transferencia.png" class="menu-icones"/> Transferências</span></a></li>
+ <li class="wobble-vertical"><a [routerLink]="['extratos']"><span><img src="../../../assets/images/menu-extrato.png" class="menu-icones"/>  Extratos</span></a></li>
+ <li class="wobble-vertical"><a [routerLink]="['alterar-cadastro']"><span><img src="../../../assets/images/menu-alterar-cadastro.png" class="menu-icones"/>  Alterar dados<br> cadastrais</span></a></li>
+ <li class="wobble-vertical"><a><span><img src="../../../assets/images/sair.png" class="menu-icones"/>  Sair</span></a></li>
+ </ul>
+</div> 
 <p>
  
 
-  {{userVar}} //objeto
+  <!-- {{userVar}} //objeto
  Olá  {{userVar.user.name}}
  conta:  {{userVar.user.accounts}}
  sua conta é {{userVar.user.accounts[0]}}
@@ -13,6 +44,4 @@
 
  <p>
    Conta:  {{userVar.user.accounts}}
-
-  <p>
-    <img src="../../../../assets/images-delete/core-home.png" />
+ -->

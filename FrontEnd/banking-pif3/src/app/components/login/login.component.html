@@ -1,15 +1,58 @@
-<p>
+<body class="bg">
+    <div class="pagina-login ">
+       <div class="box-3">
+          <img src="../../../assets//images/logo-branco.png" class="logo-menu-1 navbar-brand" href="#">
+       </div>
+       <div class="box-4 col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+          <p> Segunda-feira, 10 de dezembro de 2018 <button type="submit" class="botao-acessar-conta" id="CancelarAcesso">Cancelar acesso</button>
+       </p>
+         </div>
+    </div>
+    <section class="section mt-5">
+       <div class="container margin-login">
+          <div class="row">
+             <div class="col-md-6">
+                <div >
+                   <h2  class="fade-anim">Bem vindo ao Internet Banking. </h2> 
+                    <h2 class="fade " >Facilidade e comodidade</h2>  
+                    <h2 class="fade-in fade ">ao seu alcance.</h2>
+                </div>
+             </div>
+             <div class="center-login col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+                <div>
 
-
-  <p>
-
+<!-- 
       <form (submit)="loginUser($event)">
           <input type="text" placeholder="cpf/cnpj" id="document">
           <input type="text" placeholder="password" id="password">
           <input type="submit" value="Submit" > 
           
-        </form>
+        </form> -->
+        <form (submit)="loginUser($event)" class="align-icontent-center">
+                <!-- <div class="input-box-login">
+                   <input class=" conta login textchild-estilo" id="conta" name="conta" maxlength="50" required type="number"/>
+                   <label  class="conta login textchild-estilo" for="conta">Conta</label>
+                </div> -->
+                <div class="input-box-login">
+                   <input class="  login textchild-estilo"  id="document" name="agencia" maxlength="50" required type="number"/>
+                   <label  class=" login textchild-estilo" for="agencia">CPF/CNPJ</label>
+                </div>
+                <div class="input-box-login">
+                   <input class="  login textchild-estilo" id="password" name="password" maxlength="50" required type="password"/>
+                   <label  class=" login textchild-estilo" for="password">Senha de acesso</label>
+                </div>
+                <button type="submit" value="submit" class="botao-acessar-conta" id="AvancarTransf">Entrar </button>
+                <br>
+                <a href="#"> Esqueceu sua senha?</a>
+             </form>
 
 
-    <p>
-    <img src="../../../assets/images-delete/login.png" />
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</body>
+   
+    <!-- <img src="../../../assets/images-delete/login.png" /> -->

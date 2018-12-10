@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" id="titulo">FIP</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,4 +35,65 @@
 
   <p>
     <img src="../../../assets/images-delete/navbar.png">
-
+ -->
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed">
+      <div class="container">
+        <a><img src="../../../assets/images/logo-branco.png" class="logo-menu-1 navbar-brand" href="#"></a>
+        
+          <!-- INICIO MENU RESPONSIVO -->
+          <div class="display-none menu-responsivo">
+            <button class="navbar-toggler btn-menu-hamburguer" type="button" data-toggle="collapse" 
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+            aria-label="Toggle navigation">
+              <div id="menu-hamburger" id="sidebarToggle">
+                <span></span>
+                <span></span> 
+                <span></span>
+              </div>
+            </button>
+            <div class="collapse navbar-collapse list-style-none margin-none nav-sub-menu" id="navbarResponsive">
+              <ul class="list-style-none margin-none">  
+                <li class="nav-item">
+                  <div class="input-box">
+                    <input class="textchild-estilo" id="" name="cpf" maxlength="11" required type=""/>
+                    <label  class="textchild-estilo" for="cpf">CPF</label>
+                  </div> 
+                  <button type="submit" [routerLink]="['login']" class="botao-acessar-conta2">Acessar Conta</button> 
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto display-none">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">O Projeto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Atendimento</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- FIM MENU RESPONSIVO -->
+  
+        <div class="collapse navbar-collapse" id="textoNavbar">
+          <ul class="navbar-nav mr-auto align-navbar">
+            <li class="nav-item active nav-li">
+              <a class="nav-link" href="#">O projeto</a>
+            </li>
+            <li class="nav-item nav-li">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item nav-li">
+              <a class="nav-link" href="#">Atendimento</a>
+            </li>
+          </ul>
+          <div class="input-box">
+              <input class=" textchild-estilo" id="" name="cpf" maxlength="11" required type=""/>
+              <label  class="textchild-estilo" for="cpf">CPF</label>
+          </div> 
+          <button type="submit" class="botao-acessar-conta">Acessar Conta</button> 
+        </div>
+      </div>
+    </nav>
