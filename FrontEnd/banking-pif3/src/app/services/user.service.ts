@@ -15,22 +15,7 @@ import 'rxjs/add/observable/fromPromise';
 import { AuthService } from '../auth.service';
 
 
-export interface Iconta{
-  success: boolean
-  account: {
-    : {
-          street: string,
-          number: number,
-          complement: string,
-          zipcode: number,
-          neighborhood: string,
-          city: string
-      },
-      number: string,
-      agency: string
-    // date: data
-      transactions: any
-}
+
 
 export interface Itransacao{
  
@@ -69,12 +54,12 @@ export class UserService {
       return  this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
    }
 
-   getConta(number, agency, id): Observable<Iconta>{
+   getConta(number, agency, id): Observable<any>{
  /*    ApiRoutes.get('/account', verifyToken, async function(req, res) {
       const { number, agency, id } = req.body; */
      const headers = new HttpHeaders()
         .set('token', this.auth.theToken);
-     return  this.http.get<Iconta>('http://localhost:3000/api/account/', {headers: headers})
+     return  this.http.get<any>('http://localhost:3000/api/account/', {headers: headers})
     }
 
     getFavorecido(document,number,agency){

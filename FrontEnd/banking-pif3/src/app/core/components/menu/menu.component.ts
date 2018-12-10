@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     this.user.getUser(this.numbDocument, this.chaveToken).subscribe( data => {                
       //this.message = data.message
       this.userVar = data
-      console.log('api user', data.user)
+      console.log('api user', data)
     })
       
   }
