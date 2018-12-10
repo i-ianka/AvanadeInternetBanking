@@ -16,15 +16,25 @@ import { AuthService } from '../auth.service';
 
 
 export interface Iconta{
-  success: boolean
+  number: string,
+  agency: string
+ // date: data
+  transactions: any
 }
 
 export interface Itransacao{
-  success: boolean
+ 
+  type: string ,
+  enum: [], 
+  value: number,
+  //date: number
+ // transferAccount: { type: Schema.Types.ObjectId, ref: 'Account' },
+  created_at: string
 }
 
 export interface Iatualiza{
   success: boolean
+
 }
 
 
@@ -81,7 +91,7 @@ export class UserService {
         let user; */
         const headers = new HttpHeaders()
          .set('token', this.auth.theToken);
-        return this.http.put<Iatualiza>('http://localhost:3000/api/update', {phone, email, password, newPassword, id})
+        return this.http.put('http://localhost:3000/api/update', {phone, email, password, newPassword, id})
   
     }
 
