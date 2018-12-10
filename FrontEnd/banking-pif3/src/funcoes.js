@@ -25,17 +25,43 @@ function(e){var o=t(this);t("html, body").stop().animate({scrollTop:t(o.attr("hr
 
 // PRÓXIMA PÁGINA
 
-$("#nextPage").on('click', function() {
-  if (pagina2.style.display === "none") {
-    pagina1.style.display = "inline-block";
+// $("#nextPage").on('click', function() {
+//   if (pagina2.style.display === "none") {
+//     pagina1.style.display = "inline-block";
     
   
+// }
+// else {
+//     pagina1.style.display = "none";
+//     pagina2.style.display = "inline-block";
+// } 
+//   });
+
+
+var showing = [1, 0, 0,0];
+var questions = ['q0', 'q1', 'q2','q3'];
+function next() {
+var qElems = [];
+for (var i = 0; i < questions.length; i++) {
+qElems.push(document.getElementById(questions[i]));   
 }
-else {
-    pagina1.style.display = "none";
-    pagina2.style.display = "inline-block";
-} 
-  });
+for (var i = 0; i < showing.length; i++) {
+if (showing[i] == 1) {
+    qElems[i].style.display = 'none';
+    showing[i] = 0;
+    if (i == showing.length - 1) {
+        qElems[0].style.display = 'block';
+        showing[0] = 1;
+    } else {
+        qElems[i + 1].style.display = 'block';
+        showing[i + 1] = 1;
+    }
+    break;
+}
+}      
+}
+
+
 
 
 //   CHECKBOX CONTA-CORRENTE|CONTA-POUPANÇA

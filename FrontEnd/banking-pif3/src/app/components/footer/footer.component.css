@@ -1,0 +1,49 @@
+
+/* CONTA-CORRENT CONTA POUPANCA CHECKBOX */
+
+
+/* GRID MENU-BANCO */
+
+html {
+	position: relative;
+	min-height: 100%;
+	font-family: "Arial Rounded MT";
+}
+
+body {
+  height:calc(100%-100px);
+  height:-moz-calc(100%-100px);
+  height:-webkit-calc(100%-100px);
+}
+
+.footer-copyright{
+  color: #CC3A56;
+
+}
+
+ :root {
+	--input-padding-x: 0.75rem;
+	--input-padding-y: 0.75rem;
+}
+
+
+
+
+
+ ::-webkit-scrollbar {
+	width: 12px;
+	padding: 60 25%;
+	opacity: 0.5;
+}
+
+ ::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+	background-color: #382B2D;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+

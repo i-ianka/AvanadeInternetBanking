@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-extratos',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtratosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user: UserService, private auth: AuthService) { }
+
+  teste = "ola extratos"
 
   ngOnInit() {
   }

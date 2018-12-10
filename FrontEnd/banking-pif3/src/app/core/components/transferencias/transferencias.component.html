@@ -1,312 +1,345 @@
 
 <app-menu></app-menu>
+
 <div id="wrapper">
-        <div id="content-wrapper">
-                <div class="container-fluid">
-                   <div class="container-fluid mt-4">
-                      <div class="row justify-content-center">
-                         <div class="col-auto mb-3">
-                            <div class="card  card-dados" id="pagina1" >
-                               <div class="card-body">
-                                  <span>
-                                     <h3>
-                                        <img src="../../../assets/images/voltar.png" class="indicadores"/>
-                                        <img src="../../../assets/images/transferencia.png" class="titulos-icones"/>
-                                        Transferências 
-                                     </h3>
-                                  </span>
-                                  <hr>
-                                  <a href="#" id="nextPage">
-                                     <span>
-                                        <h5 class="subtitulos">
-                                           <img src="../../../assets/images/transferencia-mp.png" class="subtitulos-icones"/>
-                                           Para contas FIPbank <img src="../../../assets/images/ir.png" class="indicadores-icones"/> 
-                                        </h5>
-                                     </span>
-                                  </a>
-                                  <hr>
-                                  <span>
-                                     <h5 class="subtitulos">
-                                        <img src="../../../assets/images/transferencia-ob.png" class="subtitulos-icones"/>
-                                        Contas de outros bancos (TED E DOC) <img src="../../../assets/images/ir.png" class="indicadores-icones"/> 
-                                     </h5>
-                                  </span>
+      <div id="content-wrapper">
+              <div class="container-fluid">
+                 <div class="container-fluid mt-4">
+                    <div class="row justify-content-center">
+                       <div class="col-auto mb-3">
+
+<div id="questions">
+<div id="q0">
+<div class="card  card-dados" id="pagina1" >
+<div class="card-body">
+ <span>
+    <h3>
+       <img src="img/voltar.png" class="indicadores"/>
+       <img src="img/transferencia.png" class="titulos-icones"/>
+       Transferências 
+    </h3>
+ </span>
+ <hr>
+ <a href="#"  onclick="next()">
+    <span>
+       <h5 class="subtitulos">
+          <img src="img/transferencia-mp.png" class="subtitulos-icones"/>
+          Para contas FIPbank <img src="img/ir.png" class="indicadores-icones"/> 
+       </h5>
+    </span>
+ </a>
+ <hr>
+ <span>
+    <h5 class="subtitulos">
+       <img src="img/transferencia-ob.png" class="subtitulos-icones"/>
+       Contas de outros bancos (TED E DOC) <img src="img/ir.png" class="indicadores-icones"/> 
+    </h5>
+ </span>
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="q1"  style="display: none">
+<!-- REFERENCIAS MESMO BANCO -->
+<div class="card  card-dados-form" >
+  <div class="card-body"> 
+  
+  <span>
+  <h3>
+  <img src="img/voltar.png" class="indicadores"/>
+  <img src="img/transferencia-mp.png" class="titulos-icones"/>
+  Transferências/Contas FIPbank </h3>
+  </span>
+            
+  <div class="container-1">
+  
+    <div class="box-1">
+    <button type="button" class="btn btn-primary btn-radio">Conta Corrente</button>
+    <input type="checkbox" id="left-item" hidden class="hidden">
+    <button type="button" class="btn btn-primary btn-radio">Conta Poupança</button>
+    <input type="checkbox" id="left-item" hidden class="hidden">
+    </div>
+  
+    <div class="box-2">
+    </div>
+  
+  </div>
+  
+  <div class="container-1">
+   
+    <div class="box-1">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="img/menu-saldo.png" class="form-icones"/>Saldo disponível
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <p>Agência/Conta: 2926/00353185</p>
+    <p>Saldo Disponível: (R$)3.000,08</p>
+    <p>Saldo Total: (R$)3.000,08</p>
+    </div>
+    </div>   
+    </div>
+  
+    <div class="box-2">
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="img/lista-favorecido.png" class="form-icones"/> Lista de favorecidos
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <p id="listaFavorecido">Inglid Ianka</p>
+    <p id="listaFavorecido">Alguma ação</p>
+    <a class="dropdown-item" href="#">  <img src="img/add-favorecido.png" class="menu-icones"/>  Adicionar favorecido</a>
+    </div>
+    </div> 
+    </div>
+  
+  
+  </div>
+  
+  
+  <div class="container-1">
+      <div class="box-1">
+       
+        <div class="input-box">
+        <input class=" textchild-estilo" id="nome" name="nome" maxlength="50" required type="text"/>
+        <label  class="textchild-estilo" for="nome">Nome do favorecido</label>
+        </div>
+  
+        <div class="input-box">
+        <input class=" textchild-estilo" id="conta" name="conta" maxlength="50" required type="number"/>
+        <label  class="textchild-estilo" for="conta">Conta</label>
+        </div>  
+          
+          
+        <div class="input-box">
+        <input class=" textchild-estilo" id="valorTransf" name="valorTransf" maxlength="50" required type="email"/>
+        <label  class="textchild-estilo" for="valorTransf">Valor(R$)</label>
+        </div>  
+            
+            
+        <div class="input-box">
+        <input class="textchild-estilo" id="agendar" name="agendar" maxlength="50" required type="date"/>
+        <label  class="textchild-estilo" for="agendar">Agendar</label>
+        </div>  
+  
+       </div>   
+  
+  
+      <div class="box-2">
+  
+       <div class="input-box-2">
+       <label  class="texto-tipoConta">Tipo de conta</label>
+       <select class="textchild-estilo"  id="tipoConta" >
+       <option class="textchild-estilo"  value="contaCorrente"> 
+       Conta Corrente
+       </option>
+       <option value="contaPoupança">
+       Conta Poupança
+       </option>
+       </select> 
+        </div>
+  
+  
+       <div class="input-box">
+       <input class=" textchild-estilo" id="agencia" name="agencia" maxlength="50" required type="number"/>
+       <label  class="textchild-estilo" for="agencia">Agência</label>
+       </div>  
+              
+              
+       <div class="input-box">
+       <input class=" textchild-estilo" id="dataDebito" name="dataDebito" maxlength="50" PLACrequired type="date"/>
+       <label  class="textchild-estilo" for="dataDebito">Data do débito</label>
+       </div>  
+              
+        <button type="submit" class="botao"  onclick="next()"> Avançar</button>
+       </div>  
+  
+  
+  
+     </div>
+  
+   </div>
+
+</div>
+
+</div>
+
+
+<div id="q2"  style="display: none">
+<!-- Confirmação de Transferência -->
+<div class="card  card-dados-form" >
+<div class="card-body"> 
+
+<span>
+<h3>
+<img src="img/voltar.png" class="indicadores"/>
+<img src="img/transferencia-ob.png" class="titulos-icones"/>
+Confirmação de Transferência </h3>
+</span>
+                       
+
+<div class="container-1">
+  <div class="box-1">
+   
+    <div class="input-box">
+    <input class=" textchild-estilo" id="nome" name="nome" maxlength="50" required type="text"/>
+    <label  class="textchild-estilo" for="nome">Nome do favorecido</label>
+    </div>
+
+    <div class="input-box">
+    <input class=" textchild-estilo" id="conta" name="conta" maxlength="50" required type="number"/>
+    <label  class="textchild-estilo" for="conta">Conta</label>
+    </div>  
+
+    <div class="input-box">
+        <input class=" textchild-estilo" id="agencia" name="agencia" maxlength="50" required type="number"/>
+        <label  class="textchild-estilo" for="agencia">Agência</label>
+        </div>  
+      
+  
+        
+    <div class="input-box">
+    <input class="textchild-estilo" id="agendar" name="agendar" maxlength="50" required type="date"/>
+    <label  class="textchild-estilo" for="agendar">Agendar</label>
+    </div>  
+
+    <div class="input-box">
+        <input class=" textchild-estilo" id="senhaAcesso" name="senhaAcesso" maxlength="50" required type="password"/>
+        <label  class="textchild-estilo" for="senhaAcesso">Senha de acesso</label>
+        </div> 
+
+   </div>   
+
+
+  <div class="box-2">
+
+      <div class="input-box">
+          <input class=" textchild-estilo" id="nomeBanco" name="nomeBanco" maxlength="50" required type="text"/>
+          <label  class="textchild-estilo" for="nomeBanco">Banco</label>
+          </div>  
+
+   <div class="input-box-2">
+   <label  class="texto-tipoConta">Tipo de conta</label>
+   <select class="textchild-estilo"  id="tipoConta" >
+   <option class="textchild-estilo"  value="contaCorrente"> 
+   Conta Corrente
+   </option>
+   <option value="contaPoupança">
+   Conta Poupança
+   </option>
+   </select> 
+    </div>
+
+
+    <div class="input-box">
+    <input class=" textchild-estilo" id="valorTransf" name="valorTransf" maxlength="50" required type="email"/>
+    <label  class="textchild-estilo" for="valorTransf">Valor(R$)</label>
+    </div>  
+            
+          
+   <div class="input-box">
+   <input class=" textchild-estilo" id="dataDebito" name="dataDebito" maxlength="50" required type="date"/>
+   <label  class="textchild-estilo" for="dataDebito">Data do débito</label>
+   </div>  
+
+          
+    <button type="submit" class="botao"  onclick="next()"  id="AvancarTransf">Finalizar </button>
+   </div>  
+
+
+ </div>
+
+
+</div>
+</div>
+
+
+
+</div>  
+
+<div id="q3"  style="display: none">
+
+  
+              <!-- Transferência realizada -->
+              <div class="card  card-dados-form"  >
+                      <div class="card-body" id="export">
+                         <span>
+                            <h3>
+                               <img src="img/voltar.png" class="indicadores"/>
+                               <img src="img/transferencia-ob.png" class="titulos-icones"/>
+                               Transferência realizada com sucesso! 
+                            </h3>
+                         </span>
+                         <div class="container-1">
+                            <div class="box-1">
+                               <div id="box-cinza2">
+                                  <span>Favorecido</span> 
+                                  <p id="nomeFavorecido"> Inglid Ianka Miranda </p>
+                                  <span>Conta Destino</span> 
+                                  <p id="contaDestino">4523/01134612 </p>
                                </div>
+                               <div id="box-cinza">
+                                  <span>Banco Destino</span> 
+                                  <p id="bancoDestino"> 0341- ITAU UNIBANCO SA  </p>
+                               </div>
+                               <div id="box-cinza">
+                                  <span>Tipo de conta</span> 
+                                  <p id="tipoConta"> Conta Corrente </p>
+                               </div>
+                               <div id="box-cinza">
+                                  <span>Data do débito</span> 
+                                  <p id="dataDebito"> 06/12/2018 </p>
+                               </div>
+                               <button type="submit" class="botao" id="exportarComprovante">Exportar comprovante </button>
                             </div>
-    
-    
-                            <!-- REFERENCIAS MESMO BANCO -->
-                               <div class="card  card-dados-form" id="pagina2" >
-                               <div class="card-body"> 
-                               
-                               <span>
-                               <h3>
-                               <img src="../../../assets/images/voltar.png" class="indicadores"/>
-                               <img src="../../../assets/images/transferencia-mp.png" class="titulos-icones"/>
-                               Transferências/Contas FIPbank </h3>
-                               </span>
-                                         
-                               <div class="container-1">
-                               
-                                 <div class="box-1">
-                                 <button type="button" class="btn btn-primary btn-radio">Conta Corrente</button>
-                                 <input type="checkbox" id="left-item" hidden class="hidden">
-                                 <button type="button" class="btn btn-primary btn-radio">Conta Poupança</button>
-                                 <input type="checkbox" id="left-item" hidden class="hidden">
-                                 </div>
-                               
-                                 <div class="box-2">
-                                 </div>
-                               
+                            <div class="box-2">
+                               <div id="box-cinza2">
+                                  <span>Cedente</span> 
+                                  <p id="nomeCedente">Palloma Adolfi </p>
+                                  <span>Conta Destino</span> 
+                                  <p id="contaDestino">2926/00353185 </p>
                                </div>
-                               
-                               <div class="container-1">
-                                
-                                 <div class="box-1">
-                                 <div class="dropdown">
-                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 <img src="../../../assets/images/menu-saldo.png" class="form-icones"/>Saldo disponível
-                                 </button>
-                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                 <p>Agência/Conta: 2926/00353185</p>
-                                 <p>Saldo Disponível: (R$)3.000,08</p>
-                                 <p>Saldo Total: (R$)3.000,08</p>
-                                 </div>
-                                 </div>   
-                                 </div>
-                               
-                                 <div class="box-2">
-                                 <div class="dropdown">
-                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 <img src="../../../assets/images/lista-favorecido.png" class="form-icones"/> Lista de favorecidos
-                                 </button>
-                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                 <p id="listaFavorecido">Inglid Ianka</p>
-                                 <p id="listaFavorecido">Alguma ação</p>
-                                 <a class="dropdown-item" href="#">  <img src="../../../assets/images/add-favorecido.png" class="menu-icones"/>  Adicionar favorecido</a>
-                                 </div>
-                                 </div> 
-                                 </div>
-                               
-                               
+                               <div id="box-cinza">
+                                  <span>Tipo de conta</span> 
+                                  <p id="tipoContaDestino">Conta Corrente </p>
                                </div>
-                               
-                               
-                               <div class="container-1">
-                                   <div class="box-1">
-                                    
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="nome" name="nome" maxlength="50" required type="text"/>
-                                     <label  class="textchild-estilo" for="nome">Nome do favorecido</label>
-                                     </div>
-                               
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="conta" name="conta" maxlength="50" required type="number"/>
-                                     <label  class="textchild-estilo" for="conta">Conta</label>
-                                     </div>  
-                                       
-                                       
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="valortransferido" name="valortransferido" maxlength="50" required type="email"/>
-                                     <label  class="textchild-estilo" for="valortransferido">Valor(R$)</label>
-                                     </div>  
-                                         
-                                         
-                                     <div class="input-box">
-                                     <input class="textchild-estilo" id="agendar" name="agendar" maxlength="50" required type="date"/>
-                                     <label  class="textchild-estilo" for="agendar">Agendar</label>
-                                     </div>  
-                               
-                                    </div>   
-                               
-                               
-                                   <div class="box-2">
-                               
-                                    <div class="input-box-2">
-                                    <label  class="texto-tipoConta">Tipo de conta</label>
-                                    <select class="textchild-estilo"  id="tipoConta" >
-                                    <option class="textchild-estilo"  value="contaCorrente"> 
-                                    Conta Corrente
-                                    </option>
-                                    <option value="contaPoupança">
-                                    Conta Poupança
-                                    </option>
-                                    </select> 
-                                     </div>
-                               
-                               
-                                    <div class="input-box">
-                                    <input class=" textchild-estilo" id="agencia" name="agencia" maxlength="50" required type="number"/>
-                                    <label  class="textchild-estilo" for="agencia">Agência</label>
-                                    </div>  
-                                           
-                                           
-                                    <div class="input-box">
-                                    <input class=" textchild-estilo" id="dataDebito" name="dataDebito" maxlength="50" PLACrequired type="date"/>
-                                    <label  class="textchild-estilo" for="dataDebito">Data do débito</label>
-                                    </div>  
-                                           
-                                     <button type="submit" class="botao" id="nextPage"> Avançar</button>
-                                    </div>  
-                               
-                               
-                               
-                               
-                               
-                                </div>
-    
-    
-    
-                            <!-- Confirmação de Transferência -->
-                            <div class="card  card-dados-form" id="pagina3" >
-                               <div class="card-body"> 
-                               
-                               <span>
-                               <h3>
-                               <img src="../../../assets/images/voltar.png" class="indicadores"/>
-                               <img src="../../../assets/images/transferencia-ob.png" class="titulos-icones"/>
-                               Confirmação de Transferência </h3>
-                               </span>
-                                                        
-                               
-                               <div class="container-1">
-                                   <div class="box-1">
-                                    
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="favorecido" name="favorecido maxlength="50" required type="text"/>
-                                     <label  class="textchild-estilo" for="favorecido">Nome do favorecido</label>
-                                     </div>
-                               
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="conta" name="conta" maxlength="50" required type="number"/>
-                                     <label  class="textchild-estilo" for="conta">Conta</label>
-                                     </div>  
-                               
-                                     <div class="input-box">
-                                         <input class=" textchild-estilo" id="agencia" name="agencia" maxlength="50" required type="number"/>
-                                         <label  class="textchild-estilo" for="agencia">Agência</label>
-                                         </div>  
-                                       
-                                   
-                                         
-                                     <div class="input-box">
-                                     <input class="textchild-estilo" id="agendar" name="agendar" maxlength="50" required type="date"/>
-                                     <label  class="textchild-estilo" for="agendar">Agendar</label>
-                                     </div>  
-                               
-                                     <div class="input-box">
-                                         <input class=" textchild-estilo" id="senhaAcesso" name="senhaAcesso" maxlength="50" required type="password"/>
-                                         <label  class="textchild-estilo" for="senhaAcesso">Senha de acesso</label>
-                                         </div> 
-                               
-                                    </div>   
-                               
-                               
-                                   <div class="box-2">
-                               
-                                       <div class="input-box">
-                                           <input class=" textchild-estilo" id="nomeBanco" name="nomeBanco" maxlength="50" required type="text"/>
-                                           <label  class="textchild-estilo" for="nomeBanco">Banco</label>
-                                           </div>  
-                               
-                                    <div class="input-box-2">
-                                    <label  class="texto-tipoConta">Tipo de conta</label>
-                                    <select class="textchild-estilo"  id="tipoConta" >
-                                    <option class="textchild-estilo"  value="contaCorrente"> 
-                                    Conta Corrente
-                                    </option>
-                                    <option value="contaPoupança">
-                                    Conta Poupança
-                                    </option>
-                                    </select> 
-                                     </div>
-                               
-                               
-                                     <div class="input-box">
-                                     <input class=" textchild-estilo" id="valorTransf" name="valorTransf" maxlength="50" required type="email"/>
-                                     <label  class="textchild-estilo" for="valorTransf">Valor(R$)</label>
-                                     </div>  
-                                             
-                                           
-                                    <div class="input-box">
-                                    <input class=" textchild-estilo" id="dataDebito" name="dataDebito" maxlength="50" required type="date"/>
-                                    <label  class="textchild-estilo" for="dataDebito">Data do débito</label>
-                                    </div>  
-                               
-                                           
-                                     <button type="submit" class="botao" id="AvancarTransf">Finalizar </button>
-                                    </div>  
-                               
-                               
-                               
-                               
-                               
-                                </div>
-                              
-                            <!-- Transferência realizada -->
-                            <div class="card  card-dados-form" id="pagina3" >
-                               <div class="card-body" id="export">
-                                  <span>
-                                     <h3>
-                                        <img src="../../../assets/images/voltar.png" class="indicadores"/>
-                                        <img src="../../../assets/images/transferencia-ob.png" class="titulos-icones"/>
-                                        Transferência realizada com sucesso! 
-                                     </h3>
-                                  </span>
-                                  <div class="container-1">
-                                     <div class="box-1">
-                                        <div id="box-cinza2">
-                                           <span>Favorecido</span> 
-                                           <p id="nomeFavorecido"> Inglid Ianka Miranda </p>
-                                           <span>Conta Destino</span> 
-                                           <p id="contaDestino">4523/01134612 </p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Banco Destino</span> 
-                                           <p id="bancoDestino"> 0341- ITAU UNIBANCO SA  </p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Tipo de conta</span> 
-                                           <p id="tipoConta"> Conta Corrente </p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Data do débito</span> 
-                                           <p id="dataDebito"> 06/12/2018 </p>
-                                        </div>
-                                        <button type="submit" class="botao" id="exportarComprovante">Exportar comprovante </button>
-                                     </div>
-                                     <div class="box-2">
-                                        <div id="box-cinza2">
-                                           <span>Cedente</span> 
-                                           <p id="nomeCedente">Palloma Adolfi </p>
-                                           <span>Conta Destino</span> 
-                                           <p id="contaDestino">2926/00353185 </p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Tipo de conta</span> 
-                                           <p id="tipoContaDestino">Conta Corrente </p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Valor</span> 
-                                           <p id="valorDebito">R$ 200,00</p>
-                                        </div>
-                                        <div id="box-cinza">
-                                           <span>Autenticação Bancária</span> 
-                                           <p id="autenticaBanco">38UVHEU484UEU38383FD</p>
-                                        </div>
-                                        <button type="submit" class="botao" id="NovaTransf">Nova Transferência </button>
-                                     </div>
-                                  </div>
-                                  <div id="editor"></div>
+                               <div id="box-cinza">
+                                  <span>Valor</span> 
+                                  <p id="valorDebito">R$ 200,00</p>
                                </div>
+                               <div id="box-cinza">
+                                  <span>Autenticação Bancária</span> 
+                                  <p id="autenticaBanco">38UVHEU484UEU38383FD</p>
+                               </div>
+                               <button type="submit" class="botao" id="NovaTransf">Nova Transferência </button>
                             </div>
                          </div>
+                         <div id="editor"></div>
                       </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       
-          <!-- /.content-wrapper -->
-          </div>
-    
+                
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
