@@ -46,6 +46,9 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { HomeBancoComponent } from './components/home-banco/home-banco.component';
 import { AlterarCadastroComponent } from './components/alterar-cadastro/alterar-cadastro.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { ButtonComponent } from './components/button/button.component';
+import { CpfComponent } from './components/cpf/cpf.component';
+import { SlideComponent } from './components/slide/slide.component';
 
 //pipes
 
@@ -81,7 +84,13 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
    
     AlterarCadastroComponent,
    
-    MenuLateralComponent
+    MenuLateralComponent,
+    
+    ButtonComponent,
+   
+    CpfComponent,
+   
+    SlideComponent
   ],
   imports: [
     BrowserModule, //instancia a aplicação no navegador
