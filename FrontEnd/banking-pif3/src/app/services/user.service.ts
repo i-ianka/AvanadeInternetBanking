@@ -15,6 +15,17 @@ import 'rxjs/add/observable/fromPromise';
 import { AuthService } from '../auth.service';
 
 
+export interface Iconta{
+  success: boolean
+}
+
+export interface Itransacao{
+  success: boolean
+}
+
+export interface Iatualiza{
+  success: boolean
+}
 
 
 @Injectable()
@@ -38,32 +49,40 @@ export class UserService {
       return  this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
    }
 
-   getConta(document, token): Observable<Iuser>{
+   getConta(number, agency, id): Observable<Iconta>{
  /*    ApiRoutes.get('/account', verifyToken, async function(req, res) {
       const { number, agency, id } = req.body; */
-        const headers = new HttpHeaders()
-        .set('token', token);
-      this.dadosUserLogado = this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
-      return  this.http.get<Iuser>('http://localhost:3000/api/user/'+document, {headers: headers})
+     const headers = new HttpHeaders()
+        .set('token', this.auth.theToken);
+     return  this.http.get<Iconta>('http://localhost:3000/api/account/', {headers: headers})
     }
 
-    getFavorecido(){
+    getFavorecido(document,number,agency){
       /* apiRoutes.get('/account/favored', verifyToken, async (req,res) => {
         const {document,number,agency} = req.body; */
+        const headers = new HttpHeaders()
+        .set('token', this.auth.theToken);
+     //return  this.http.get<Iconta>('http://localhost:3000/api/account/favored', {document, number, agency})
     }
 
-    postTransferencia(){
+    postTransferencia(accNumOrig, accAgeOrig, accNumDes, accAgeDes, transfMsg){
       /* apiRoutes.post('/account/transfer', verifyToken, async function(req, res) {
         const { accNumOrig, accAgeOrig, accNumDes, accAgeDes, transfMsg, value } = req.body; */
-    
+        const headers = new HttpHeaders()
+         .set('token', this.auth.theToken);
+        return this.http.post<Itransacao>('http://localhost:3000/api/account/transfer', {accNumOrig, accAgeOrig, accNumDes, accAgeDes, transfMsg})
     }    
 
 
-    putAtualizaCadastro(){
+    putAtualizaCadastro(phone, email, password, newPassword, id){
       /* phone, email, password, newPassword, id 
       apiRoutes.put('/update', verifyToken, async (req, res) => {
         const { phone, email, password, newPassword, id } = req.body;
         let user; */
+        const headers = new HttpHeaders()
+         .set('token', this.auth.theToken);
+        return this.http.put<Iatualiza>('http://localhost:3000/api/update', {phone, email, password, newPassword, id})
+  
     }
 
   get docGetUser(){

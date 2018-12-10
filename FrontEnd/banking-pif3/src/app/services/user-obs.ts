@@ -22,12 +22,3 @@ export interface Iuser {
         __v: number
     }
 }
-
-export interface Iconta{
-
-}
-
-export interface Itransacao{
-
-}
-
