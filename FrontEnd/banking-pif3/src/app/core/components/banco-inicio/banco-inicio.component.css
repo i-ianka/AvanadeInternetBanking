@@ -1,14 +1,43 @@
-li #saldo-menu{
-	margin-left:30px;
-	font-weight: 500;
-		color: #afafaf;
+
+.card-menu {
+	min-width: 28rem;
+	max-width: 28rem;
+	min-height: 11rem;
+	max-height: 11rem;
+	display: inline-block;
+	margin: 0 auto 20px auto !important;
+	justify-content: space-around;
+	justify-items: center;
+	align-items: center;
+	text-align: center;
 }
 
-li #saldo{
-color: #CC3A56;
+.card-menu:hover{
+  background: #F1F1F1;
+}
+
+.card {
+	box-shadow: 3px 3px 3px #A3A3A3;
+	background: #FCFAFA;
+	border-radius: 5% 5%;
+	border: none;
+}
+
+.logo-menu-1 {
+	width: 100px;
 }
 
 /* CONTA-CORRENT CONTA POUPANCA CHECKBOX */
+
+h4 {
+	color: #382B2D;
+	font-family: "Arial Rounded MT";
+	font-weight: bold;
+}
+
+h4 {
+	margin-top: 10px;
+}
 
 .botao-acessar-conta {
 	background-color: #CC3A56;
@@ -40,12 +69,14 @@ color: #CC3A56;
 	width: 12px;
 }
 
-a:link {
-	text-decoration: none;
+.icones {
+	margin: 6px;
+	width: 50px;
+	outline: none;
 }
 
-.menu-icones {
-	width: 24px;
+a:link {
+	text-decoration: none;
 }
 
 
@@ -63,159 +94,24 @@ body {
   height:-webkit-calc(100%-100px);
 }
 
+#wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
 
  
 
     /* MENU LATERAL     */
-	#menu {
-		display: flex;
-		height: 100%;
-		position: fixed;
-		top:0;
-		left:0;
-		width: 200px;
-		background: #382B2D;
-		/* background:transparent; */
-		z-index:0;
-  }
 
 
-/* LOGO */
-
- #logo-menu-lateral {
-background-image: url("../../../../assets/images/logo-branco.png");    
-background-repeat: no-repeat;
-background-size:88px;
-width: 100px;
-position: absolute;
-top: 27px;
-left: 20px;
-color:transparent;
-z-index: 1000;
-
-
-	  }
-
-	.menu-interno{
-		margin:0;
-		padding:0;
-		border-top: 1px solid rgba(255, 255, 255, 0.10);
-	   
-	}
-	.menu-interno li{
-		list-style: none;
-		padding: 12px;
-		cursor: pointer;
-	}
-	.menu-interno li span{
-		display: block;
-		font-size: 14px;
-		color: #AFAFAF;
-	}
-	.menu-interno li a{
-	   cursor: pointer;
-		text-decoration: none;
-	} 
+/* LOGO */ 
 
 
  
 
 /* BOTAO MENU */
-
-
-input[type="checkbox"]:checked ~ #menu {  
-		transform: translateX(0);
-   z-index: 3;
-	}
-
-  input[type=checkbox] {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		opacity: 0;
-	}
-	.hamburguer-icone {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		cursor: pointer;
-		position: absolute;
-		z-index: 99;
-		height: 100%;
-		width: 100%;
-		top: 22px;
-		left: 120px;
-		height: 22px;
-		width: 22px;
-		display: none;
-	}
-	.hamburguer-botao {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		position: absolute;
-		height: 3px;
-		width: 100%;
-		background-color: #CC3A56;
-	}
-	.horizontal {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		position: relative;
-		float: left;
-		margin-top: 3px;
-	}
-	.diagonal.part-1 {
-		position: relative;
-		transition: all 0.3s;
-		box-sizing: border-box;
-		float: left;
-	}
-	.diagonal.part-2 {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		position: relative;
-		float: left;
-		margin-top: 3px;
-	}
-	input[type=checkbox]:checked ~ .hamburguer-icone > .horizontal {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		opacity: 0;
-	}
-	input[type=checkbox]:checked ~ .hamburguer-icone > .diagonal.part-1 {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		transform: rotate(135deg);
-		margin-top: 8px;
-	}
-	input[type=checkbox]:checked ~ .hamburguer-icone > .diagonal.part-2 {
-		transition: all 0.3s;
-		box-sizing: border-box;
-		transform: rotate(-135deg);
-		margin-top: -9px;
-	}
-	
-@media only screen and (max-width : 1024px) {
-
-#menu{
-   transform: translateX(-250px);
-	transition: transform 250ms ease-in-out;
-}
-.hamburguer-icone {
-	   display: block;
-  }
-
-
-
-#logo-menu-lateral {
-background-image: url("../../../../assets/images/logo.png");   
-} 
-
-
-}
-@media only screen and (min-width : 1024px) {
-	#logo-menu-lateral {
-	background-image: url("../../../../assets/images/logo-branco.png");   
-	}
-	}
 
 /* PÁGINA LOGIN */
 
@@ -224,13 +120,9 @@ a{
   color: #afafaf;
 }
 
-label {
-	text-align: left;
-	color: #ffffff;
-	cursor: text;
-	width: 100%;
-	font-size: 16px;
-	letter-spacing: 2px;
+.footer-copyright{
+  color: #CC3A56;
+
 }
 
 
@@ -350,14 +242,13 @@ label {
   z-index: 1000;
  }
 
-
-.box-3-menu-lateral {
+.box-3 {
 	flex: 1;
 	order: 1;
   width: 50%;
   margin:2%;
-  margin-left:2%;
-  z-index:5;
+  margin-left:7%;
+  z-index:1;
 }
 
 .box-4 {
@@ -376,6 +267,26 @@ label {
 /* MEDIA QUERIES */
 
 @media (max-width: 575.98px) {
+	h4 {
+		font-size: 1.1em;
+	}
+	.icones {
+		margin: 6px;
+		width: 30px;
+	}
+	.card-menu {
+		min-width: 23rem;
+		max-width: 23rem;
+		min-height: 8rem;
+		max-height: 5rem;
+  }
+
+
+  .box-3 {
+margin: 5%;
+    /* background: #CC3A56; */
+    text-align: left;
+    }
 
     .pagina-menu-inicio {
       display: flex;
@@ -395,27 +306,8 @@ label {
 
 /* LABEL DAS INPUTS DOS FORMS */
 
-label {
-	text-align: left;
-	color: #888888;
-	cursor: text;
-	width: 100%;
-	font-size: 12px;
-	letter-spacing: 2px;
-}
-
-label {
-	line-height: 0;
-	transform: translateY(10px);
-	transition: all 0.35s ease;
-}
-
 
 /* INPUT DATA */
-
-input::-webkit-datetime-edit {
-	color: transparent;
-}
 
 
 
@@ -423,10 +315,6 @@ input::-webkit-datetime-edit {
 
 /* GRID DOS FORMS DEFINIDOS EM LADO ESQUEROD/DIREITO */
 /* Include this to make it visible when input is clicked */
-
-input:focus::-webkit-datetime-edit {
-	color: #000;
-}
 
 
 /* FOOTER */

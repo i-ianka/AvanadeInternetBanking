@@ -45,7 +45,8 @@ import { AuthService } from './auth.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HomeBancoComponent } from './components/home-banco/home-banco.component';
 import { AlterarCadastroComponent } from './components/alterar-cadastro/alterar-cadastro.component';
-import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { BancoInicioComponent } from './core/components/banco-inicio/banco-inicio.component';
+
 
 //pipes
 
@@ -81,7 +82,7 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
    
     AlterarCadastroComponent,
    
-    MenuLateralComponent
+    BancoInicioComponent
   ],
   imports: [
     BrowserModule, //instancia a aplicação no navegador
@@ -116,6 +117,12 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
       { path: 'homee', component: HomeeComponent },
       { path: 'logout', component: LoginComponent},
      
+      //CORE
+      { path: 'menu', component: MenuComponent },
+      { path: 'extratos', component: ExtratosComponent},
+      { path: 'transferencia', component: TransferenciasComponent },
+      { path: 'alterar-cadastro', component: AlteracaoCadastralComponent},
+  
 
 
    /*    { path: '', redirectTo: 'home'},

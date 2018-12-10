@@ -81,7 +81,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [ 
+               "src/funcoes.js",
+              "src/jspdf.min.js"],
             "assets": [
               "src/favicon.ico",
               "src/assets"
