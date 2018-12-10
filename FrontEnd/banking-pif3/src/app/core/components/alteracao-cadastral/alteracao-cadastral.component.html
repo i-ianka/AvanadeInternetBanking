@@ -76,29 +76,34 @@
 </p>
 
 {{teste}}
-<form>
+<form (submit)="alteraDados($event)">
   <div class="formFroup">
     Telefone
-    inputTelefone
+    <input type="text" placeholder="telefone" id="telefone">
+    
   </div>
   <div>
     Email
-    emailInput
+    
+    <input type="text" placeholder="email" id="email">
   </div>
   <div>
     Alterar senha?
-    >select sim ou nao
+    
   </div>
   <div>
     Senha Atual
+    <input type="text" placeholder="senha antiga" id="senha">
   </div>
   <div>
     Nova Senha
+    <input type="text" placeholder="nova senha" id="senhaNova">
   </div>
-  <div>
+  <div> 
     Confirme Nova Senha
+    <input type="text" placeholder="nova senha" id="senhaNova">
   </div>
-  <button> Finalizar </button>
+  <input type="submit" value="Submit" > 
 </form>
 
 <p>

@@ -184,6 +184,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { AutenticacaoService } from './services/autenticacao.service';
 import { AlteraCadastroService } from './services/altera-cadastro.service';
 import { TransacoesService } from './services/transacoes.service';
+import { FuncaoService } from './services-css/funcao.service';
 
 //pipes
 
@@ -269,7 +270,8 @@ import { TransacoesService } from './services/transacoes.service';
     AuthGuard,
     AutenticacaoService,
     AlteraCadastroService,
-    TransacoesService
+    TransacoesService,
+    FuncaoService
     
   ],
   bootstrap: [AppComponent]
